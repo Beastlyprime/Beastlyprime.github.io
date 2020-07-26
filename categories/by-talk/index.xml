@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>by-talk on Yimeng Chen&#39;s site</title>
-    <link>http://Beastlyprime.github.io/categories/by-talk/</link>
+    <link>http://beastlyprime.github.io/categories/by-talk/</link>
     <description>Recent content in by-talk on Yimeng Chen&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
     <lastBuildDate>Sun, 26 Jul 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://Beastlyprime.github.io/categories/by-talk/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://beastlyprime.github.io/categories/by-talk/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Welcome to My Blog</title>
-      <link>http://Beastlyprime.github.io/2020/07/welcome-to-my-blog/</link>
+      <link>http://beastlyprime.github.io/2020/07/welcome-to-my-blog/</link>
       <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
       <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>http://Beastlyprime.github.io/2020/07/welcome-to-my-blog/</guid>
+      <guid>http://beastlyprime.github.io/2020/07/welcome-to-my-blog/</guid>
       <description>&lt;p&gt;Hello all! This blog will include my thoughts on the contemporaneous fantastic works in the area of machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
     </item>
     
