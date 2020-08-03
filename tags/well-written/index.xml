@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yimeng Chen&#39;s site</title>
-    <link>https://beastlyprime.github.io/</link>
-    <description>Recent content on Yimeng Chen&#39;s site</description>
+    <title>well-written on Yimeng Chen&#39;s site</title>
+    <link>https://beastlyprime.github.io/tags/well-written/</link>
+    <description>Recent content in well-written on Yimeng Chen&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
     <webMaster>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
     <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://beastlyprime.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://beastlyprime.github.io/tags/well-written/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Mutual Information, Predictive Coding and Lipschitz Continuity</title>
-      <link>https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/</link>
-      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/</guid>
-      <description>&lt;p&gt;A survey.&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 1</title>
@@ -38,15 +29,6 @@
       <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/your-classfier2/</guid>
       <description>&lt;p&gt;Applications, limitations and Conclusion&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Welcome to My Blog</title>
-      <link>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</link>
-      <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</guid>
-      <description>&lt;p&gt;Hello all! This blog will include my thoughts on the contemporaneous fantastic works in the area of machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
     </item>
     
   </channel>

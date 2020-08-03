@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mutual Information on Yimeng Chen&#39;s site</title>
+    <link>https://beastlyprime.github.io/tags/mutual-information/</link>
+    <description>Recent content in Mutual Information on Yimeng Chen&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
+    <webMaster>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
+    <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://beastlyprime.github.io/tags/mutual-information/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mutual Information, Predictive Coding and Lipschitz Continuity</title>
+      <link>https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/</guid>
+      <description>&lt;p&gt;A survey.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

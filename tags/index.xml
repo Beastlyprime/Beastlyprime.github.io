@@ -8,10 +8,37 @@
     <language>en-us</language>
     <managingEditor>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
     <webMaster>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
-    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://beastlyprime.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mutual Information</title>
+      <link>https://beastlyprime.github.io/tags/mutual-information/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/tags/mutual-information/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paper-learning</title>
+      <link>https://beastlyprime.github.io/tags/paper-learning/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/tags/paper-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>well-written</title>
+      <link>https://beastlyprime.github.io/tags/well-written/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/tags/well-written/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>by-talk</title>
