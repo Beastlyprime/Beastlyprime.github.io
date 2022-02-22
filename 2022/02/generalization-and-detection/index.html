@@ -7,36 +7,36 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Yimeng Chen">
-<meta name="keywords" content="Mutual Information, Predictive Coding, Lipschitz">
-<meta name="description" content="A survey.">
+<meta name="keywords" content="OOD">
+<meta name="description" content="Thoughts on out-of-distribution generalization and detection.">
 
 
-<meta property="og:description" content="A survey.">
+<meta property="og:description" content="Thoughts on out-of-distribution generalization and detection.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mutual Information, Predictive Coding and Lipschitz Continuity">
-<meta name="twitter:title" content="Mutual Information, Predictive Coding and Lipschitz Continuity">
-<meta property="og:url" content="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
-<meta property="twitter:url" content="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+<meta property="og:title" content="Generalization and Detection">
+<meta name="twitter:title" content="Generalization and Detection">
+<meta property="og:url" content="https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/2022/02/generalization-and-detection/">
 <meta property="og:site_name" content="Yimeng Chen&#39;s site">
-<meta property="og:description" content="A survey.">
-<meta name="twitter:description" content="A survey.">
+<meta property="og:description" content="Thoughts on out-of-distribution generalization and detection.">
+<meta name="twitter:description" content="Thoughts on out-of-distribution generalization and detection.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-08-02T00:00:00">
+    <meta property="article:published_time" content="2022-02-22T00:00:00">
   
   
-    <meta property="article:modified_time" content="2020-08-02T00:00:00">
+    <meta property="article:modified_time" content="2022-02-22T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="survey">
-    
   
   
     
-      <meta property="article:tag" content="Mutual Information">
+      <meta property="article:section" content="Machine Learning">
+    
+  
+  
+    
+      <meta property="article:tag" content="review">
     
   
 
@@ -49,8 +49,8 @@
 
 
 
-  <meta property="og:image" content="https://beastlyprime.github.io/images/GWsmall.jpg">
-  <meta property="twitter:image" content="https://beastlyprime.github.io/images/GWsmall.jpg">
+  <meta property="og:image" content="https://beastlyprime.github.io/images/mappings.png">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/mappings.png">
 
 
 
@@ -60,14 +60,14 @@
   <meta property="twitter:image" content="https://beastlyprime.github.io/images/author.jpg">
 
 
-    <title>Mutual Information, Predictive Coding and Lipschitz Continuity</title>
+    <title>Generalization and Detection</title>
 
     <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+    <link rel="canonical" href="https://beastlyprime.github.io/2022/02/generalization-and-detection/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -87,7 +87,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://beastlyprime.github.io/">Yimeng Chen&#39;s site</a>
@@ -107,7 +107,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -197,7 +197,7 @@
 
       
 
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
@@ -207,15 +207,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Mutual Information, Predictive Coding and Lipschitz Continuity
+      Generalization and Detection
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-08-02T00:00:00Z">
+      <time itemprop="datePublished" datetime="2022-02-22T00:00:00Z">
         
-  August 2, 2020
+  February 22, 2022
 
       </time>
     
@@ -224,7 +224,7 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://beastlyprime.github.io/categories/survey">survey</a>
+      <a class="category-link" href="https://beastlyprime.github.io/categories/machine-learning">Machine Learning</a>
     
   
 
@@ -234,38 +234,11 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>A survey.</p>
-<h4 id="1-mutual-information-neural-estimation-icml-2018">1 Mutual Information Neural Estimation, ICML 2018</h4>
-<p>The mutual information of random variables $X$ and $Z$ is defined as
-$$
-I(X; Z) := H(X) - H(X|Z), \tag{1}
-$$
-where $H$ is the Shannon entropy. The mutual information can be understood as the decrease of the uncertainty in $X$ given $Z$.</p>
-<p>Equavalently, we can rewrite $(1)$ in the form of Kullback-Leibler (KL-) divergence between the joint distribution $\mathbb{P}_{XZ}$ and the product of the marginals $\mathbb{P}_X \otimes \mathbb{P}_Z$ :</p>
-<p>$$
-I(X,Z) = D_{KL}(\mathbb{P}_{XZ} \Vert \mathbb{P}_X \otimes \mathbb{P}_Z)
-$$</p>
-<p>where $D_{KL}$ is defined as</p>
-<p>$$
-D_{K L}(\mathbb{P} | \mathbb{Q}):=\mathbb{E}_{\mathbb{P}}\left[\log \frac{d \mathbb{P}}{d \mathbb{Q}}\right]
-$$</p>
-<p>whenever $\mathbb{P}$ is absolutely continuous w.r.t. $\mathbb{Q}$.</p>
-<p>KL-divengence has a dual representation called <strong>the Donsker-Varadhan representation</strong>, which writes as
-$$
-D_{KL}(\mathbb{P} \Vert \mathbb{Q}) = \sup_{T:\Omega \rightarrow \mathbb{R}} \mathbb{E}_{\mathbb{P}}[T] - \log(\mathbb{E}_\mathbb{Q}[e^T]),
-$$
-where the supremum is taken over all functions T such that the two expectation are finite. By this dual representation, we can derive a lower bound of KL divergence:
-$$
-D_{KL}(\mathbb{P} \Vert \mathbb{Q}) \ge \sup_{T \in \mathcal{F}} \mathbb{E}_{\mathbb{P}}[T] - \log(\mathbb{E}_\mathbb{Q}[e^T]),
-$$
-where $\mathcal{F}$ is a class of functions satisfing the integrability constraints.</p>
-<p>By exploiting this lower bound, cite{} proposed the <strong>neural information measure</strong> defined as
-$$
-I_{\Theta}(X, Z)=\sup _{\theta \in \Theta} \mathbb{E}_{\mathbb{P}_{X Z}}\left[T_{\theta}\right]-\log \left(\mathbb{E}_{\mathbb{P}_{X} \otimes \mathbb{P}_{Z}}\left[e^{T_{\theta}}\right]\right)
-$$
-where $T_\theta$ is parametrized by a deep neural network with parameters $\theta \in \Theta$. We call this network the *statistics network* . In practice, the expectations are estimated using empirical samples from $\mathbb{P}_{XZ}$ and $\mathbb{P}_X \otimes \mathbb{P}_Z$ .</p>
-<h4 id="2-learning-deep-representations-by-mutual-information-estimation-and-maximization-deep-infomax--iclr-2019">2 Learning Deep Representations by Mutual Information Estimation and Maximization (Deep InfoMax) , ICLR 2019</h4>
-<h4 id="3-wasserstein-dependency-measure-for-representation-learning-neurips-2019">3 Wasserstein Dependency Measure for Representation Learning, NeurIPS 2019</h4>
+              <p>Thoughts on out-of-distribution generalization and detection.</p>
+<p>The generalization error of model $\hat{f}$ is defined as $\mathcal{R}(\hat{f}) - \inf_{f \in \mathcal{F}} \mathcal{R}(f)$ , where $\mathcal{R}$ denotes the expected loss. The error can be further decomposed into three parts. The first one is the optimization loss $\epsilon_{opt} :=\hat{\mathcal{R}}(\hat{f}) - \inf_{f \in \mathcal{F}_{\delta}} \hat{\mathcal{R}}(f)$, i.e. the loss in optimizing $\hat{f}$ in $\mathcal{F}_\delta$ . The second one is $\epsilon_{stat}:= \mathcal{R}(\hat{f}) - \hat{\mathcal{R}}(\hat{f})$, which is the difference between the empirical and real losses. The last one is the theoretical error induced by the limitation of $\mathcal{F}_\delta$ .</p>
+<p>Study on robustness and generalization mostly concerns $\epsilon_{stat}$.  Suppose $\hat{f}(x) = \hat{f} \circ \hat{g}(x) = \hat{f}(\hat{z}) $ .  $\hat{g}$ is the learned representation mapping. Generally,  the problem occurs when $\hat{\mathcal{R}}_{train}(\hat{f})$ and $\hat{\mathcal{R}}_{test}(\hat{f})$ have large difference. Such difference orginates from the fact that $\hat{\mathbb{P}}_{train}$ is a partial sampling of the real $\mathbb{P}$.</p>
+<p>Robustness and out-of-distribution generalization consider different kinds of distribution shift. We can view the input as a original form of representation. From this view, the robustness and bias-shift can be unified as studies on distribution shift in different representation space.</p>
+<p>Similar to that, outlier detection and</p>
               
             </div>
           </div>
@@ -277,7 +250,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/mutual-information/">Mutual Information</a>
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/review/">review</a>
 
                   </div>
                 
@@ -298,7 +271,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/representation-learning/" data-tooltip="Representation Learning">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one-part-1/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 1">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -316,7 +289,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/02/generalization-and-detection/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -356,7 +329,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
 </footer>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
         <div class="post-actions-wrap">
   
       <nav >
@@ -372,7 +345,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/representation-learning/" data-tooltip="Representation Learning">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one-part-1/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 1">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -390,7 +363,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/02/generalization-and-detection/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -415,12 +388,12 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
 </div>
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <i id="btn-close-shareoptions" class="fa fa-close"></i>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2Fmutual-information-predictive-coding-and-lipschitz-continuity%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F02%2Fgeneralization-and-detection%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
@@ -512,9 +485,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/beastlyprime.github.io\/mutual-information-predictive-coding-and-lipschitz-continuity\/';
+          this.page.url = 'https:\/\/beastlyprime.github.io\/2022\/02\/generalization-and-detection\/';
           
-            this.page.identifier = '\/mutual-information-predictive-coding-and-lipschitz-continuity\/'
+            this.page.identifier = '\/2022\/02\/generalization-and-detection\/'
           
         };
         (function() {

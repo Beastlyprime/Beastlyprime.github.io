@@ -7,16 +7,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Yimeng Chen">
-<meta name="keywords" content="Mutual Information, Predictive Coding, Lipschitz">
+<meta name="keywords" content="Mutual Information, Contrastive, Causality">
 <meta name="description" content="A survey.">
 
 
 <meta property="og:description" content="A survey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mutual Information, Predictive Coding and Lipschitz Continuity">
-<meta name="twitter:title" content="Mutual Information, Predictive Coding and Lipschitz Continuity">
-<meta property="og:url" content="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
-<meta property="twitter:url" content="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+<meta property="og:title" content="Representation Learning">
+<meta name="twitter:title" content="Representation Learning">
+<meta property="og:url" content="https://beastlyprime.github.io/representation-learning/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/representation-learning/">
 <meta property="og:site_name" content="Yimeng Chen&#39;s site">
 <meta property="og:description" content="A survey.">
 <meta name="twitter:description" content="A survey.">
@@ -36,7 +36,7 @@
   
   
     
-      <meta property="article:tag" content="Mutual Information">
+      <meta property="article:tag" content="Mutual Information, Representation Learning">
     
   
 
@@ -60,14 +60,14 @@
   <meta property="twitter:image" content="https://beastlyprime.github.io/images/author.jpg">
 
 
-    <title>Mutual Information, Predictive Coding and Lipschitz Continuity</title>
+    <title>Representation Learning</title>
 
     <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+    <link rel="canonical" href="https://beastlyprime.github.io/representation-learning/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -207,7 +207,7 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Mutual Information, Predictive Coding and Lipschitz Continuity
+      Representation Learning
     </h1>
   
   
@@ -235,37 +235,89 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <p>A survey.</p>
-<h4 id="1-mutual-information-neural-estimation-icml-2018">1 Mutual Information Neural Estimation, ICML 2018</h4>
-<p>The mutual information of random variables $X$ and $Z$ is defined as
-$$
-I(X; Z) := H(X) - H(X|Z), \tag{1}
-$$
-where $H$ is the Shannon entropy. The mutual information can be understood as the decrease of the uncertainty in $X$ given $Z$.</p>
-<p>Equavalently, we can rewrite $(1)$ in the form of Kullback-Leibler (KL-) divergence between the joint distribution $\mathbb{P}_{XZ}$ and the product of the marginals $\mathbb{P}_X \otimes \mathbb{P}_Z$ :</p>
-<p>$$
-I(X,Z) = D_{KL}(\mathbb{P}_{XZ} \Vert \mathbb{P}_X \otimes \mathbb{P}_Z)
-$$</p>
-<p>where $D_{KL}$ is defined as</p>
-<p>$$
-D_{K L}(\mathbb{P} | \mathbb{Q}):=\mathbb{E}_{\mathbb{P}}\left[\log \frac{d \mathbb{P}}{d \mathbb{Q}}\right]
-$$</p>
-<p>whenever $\mathbb{P}$ is absolutely continuous w.r.t. $\mathbb{Q}$.</p>
-<p>KL-divengence has a dual representation called <strong>the Donsker-Varadhan representation</strong>, which writes as
-$$
-D_{KL}(\mathbb{P} \Vert \mathbb{Q}) = \sup_{T:\Omega \rightarrow \mathbb{R}} \mathbb{E}_{\mathbb{P}}[T] - \log(\mathbb{E}_\mathbb{Q}[e^T]),
-$$
-where the supremum is taken over all functions T such that the two expectation are finite. By this dual representation, we can derive a lower bound of KL divergence:
-$$
-D_{KL}(\mathbb{P} \Vert \mathbb{Q}) \ge \sup_{T \in \mathcal{F}} \mathbb{E}_{\mathbb{P}}[T] - \log(\mathbb{E}_\mathbb{Q}[e^T]),
-$$
-where $\mathcal{F}$ is a class of functions satisfing the integrability constraints.</p>
-<p>By exploiting this lower bound, cite{} proposed the <strong>neural information measure</strong> defined as
-$$
-I_{\Theta}(X, Z)=\sup _{\theta \in \Theta} \mathbb{E}_{\mathbb{P}_{X Z}}\left[T_{\theta}\right]-\log \left(\mathbb{E}_{\mathbb{P}_{X} \otimes \mathbb{P}_{Z}}\left[e^{T_{\theta}}\right]\right)
-$$
-where $T_\theta$ is parametrized by a deep neural network with parameters $\theta \in \Theta$. We call this network the *statistics network* . In practice, the expectations are estimated using empirical samples from $\mathbb{P}_{XZ}$ and $\mathbb{P}_X \otimes \mathbb{P}_Z$ .</p>
-<h4 id="2-learning-deep-representations-by-mutual-information-estimation-and-maximization-deep-infomax--iclr-2019">2 Learning Deep Representations by Mutual Information Estimation and Maximization (Deep InfoMax) , ICLR 2019</h4>
-<h4 id="3-wasserstein-dependency-measure-for-representation-learning-neurips-2019">3 Wasserstein Dependency Measure for Representation Learning, NeurIPS 2019</h4>
+<h2 id="what-is-representations">What is representations?</h2>
+<blockquote>
+<p>Any function of the data which is useful for a task. &mdash;- <a href="https://alexachi.github.io/index.html">Alessandro Achille</a></p>
+</blockquote>
+<p>What is a good representation?</p>
+<p>Think about dimension reduction: input; representation space; hypothesis space</p>
+<p>The Minimality, Necessary and Information criterion proposed by <em>Ian Fischer</em>:</p>
+<ul>
+<li>Information: representation Z captures <em>useful</em> information about (X, Y)</li>
+<li>Necessity (sufficiency): the information captured by Z should be necessary to solve the task. Can be defined as I(X; Y) &lt;= I(Y; Z).</li>
+<li>Minimality: require one that retains the smallest amout of information. I(X; Y) &gt;= I(X; Z)</li>
+</ul>
+<p>When considering distribution shift, we require an additional Invariance  criterion:</p>
+<ul>
+<li>Invariance: for any distribution $\mathbb{P}, \mathbb{P}&lsquo;$ of $(X,Y)$, the predictability of $Z$ towards $Y$ is invariant, i.e. $\mathbb{P}(Y|Z)=\mathbb{P}'(Y|Z)$.</li>
+</ul>
+<h2 id="problem-of-generalization">Problem of Generalization</h2>
+<p>The generalization error of model $\hat{f}$ is defined as $\mathcal{R}(\hat{f}) - \inf_{f \in \mathcal{F}} \mathcal{R}(f)$ , where $\mathcal{R}$ denotes the expected loss. The error can be further decomposed into three parts. The first one is the optimization loss $\epsilon_{opt} :=\hat{\mathcal{R}}(\hat{f}) - \inf_{f \in \mathcal{F}_{\delta}} \hat{\mathcal{R}}(f)$, i.e. the loss in optimizing $\hat{f}$ in $\mathcal{F}_\delta$ . The second one is $\epsilon_{stat}:= \mathcal{R}(\hat{f}) - \hat{\mathcal{R}}(\hat{f})$, which is the difference between the empirical and real losses. The last one is the theoretical error induced by the limitation of $\mathcal{F}_\delta$ .</p>
+<p>Study on robustness and generalization mostly concerns $\epsilon_{stat}$.  Suppose $\hat{f}(x) = \hat{f} \circ \hat{g}(x) = \hat{f}(\hat{z}) $ .  Generally,  the problem occurs when $\hat{\mathcal{R}}_{train}(\hat{f})$ and $\hat{\mathcal{R}}_{test}(\hat{f})$ have large difference. Such difference orginates from the fact that $\hat{\mathbb{P}}_{train}$ is a partial sampling of the real $\mathbb{P}$.</p>
+<p>Robustness and out-of-distribution generalization consider different kinds of distribution shift. We can view the input as a original form of representation. From this view, the robustness and bias-shift can be unified as studies on distribution shift in different representation space.</p>
+<p>Similar to that, outlier detection and</p>
+<h2 id="some-concepts">Some Concepts</h2>
+<p>Rademacher complexity: a measure of the richness of a class of real-valued functions. Unlike VC dimension, Rademacher complexity is not restricted to binary functions, and is related with the data distribution.</p>
+<hr>
+<h2 id="related-works">Related Works</h2>
+<h3 id="1-representation-learning-via-invariant-causal-mechanisms-iclr-2021">1 Representation Learning via Invariant Causal Mechanisms, ICLR 2021</h3>
+<h4 id="motivation">Motivation</h4>
+<p>(Tschannen et al., 2019) has shown that performance on downstream tasks may be more tightly correlated with the choice of encoder architecture than the achieved MI bound, highlighting <strong>issues with the MI theory of contrastive learning</strong>.</p>
+<p>Further, contrastive approaches compare different views of the data (usually under different data augmentations) to calculate similarity scores. This approach to computing scores has been <strong>empirically observed</strong> as a key success factor of contrastive methods, but <strong>has yet to be theoretically justified</strong>. This lack of a solid theoretical explanation for the effectiveness of contrastive methods <strong>hinders their further development</strong>.</p>
+<p>To <strong>remedy the theoretical shortcomings</strong>, we analyze the problem of self-supervised representation learning through <strong>a causal lens</strong>:</p>
+<ul>
+<li>
+<p>Formalize intuitions about the data generating process using a causal graph</p>
+</li>
+<li>
+<p>Leverage causal tools to derive properties of the optimal representation. We show that a representation should be an <em>invariant predictor</em> of proxy targets under interventions on features that are only correlated, but not causally related to the <strong>downstream targets of interest</strong>.</p>
+</li>
+</ul>
+<h4 id="contributions">Contributions</h4>
+<ul>
+<li>
+<p>We <strong>formalize</strong> problem of self-supervised representation learning using <strong>causality</strong> and propose to more effectively leverage data augmentations through invariant prediction.</p>
+</li>
+<li>
+<p>We propose a regularizer which explicitly enforces that the prediction of the proxy targets is <strong>invariant across data augmentations (as interventions)</strong>. This gives rise to an objective for self-supervised learning we call Representation Learning via Invariant Causal Mechanisms (RELIC). We write this objective as ![image-20210302152234056](/Users/chenyimeng/Library/Application Support/typora-user-images/image-20210302152234056.png)</p>
+</li>
+</ul>
+<p>![image-20210302151301525](/Users/chenyimeng/Library/Application Support/typora-user-images/image-20210302151301525.png)</p>
+<p>![image-20210302151927059](/Users/chenyimeng/Library/Application Support/typora-user-images/image-20210302151927059.png)</p>
+<p>![image-20210302160156986](/Users/chenyimeng/Library/Application Support/typora-user-images/image-20210302160156986.png)</p>
+<ul>
+<li>We show how <strong>this explicit invariance regularization</strong> leverages augmentations <strong>more effectively</strong> than previous self-supervised methods and that representations learned using RELIC are <strong>guaranteed to generalize well</strong> to downstream tasks under <strong>weaker assumptions</strong> than those required by previous work.
+<ul>
+<li>The explicit invariance penalty encourages the within-class distances (for a downstream task of inter- est) of the representations learned by RELIC to be tightly concentrated.</li>
+<li>Theoretical justification for using an instance discrimination-based contrastive loss using a causal perspective.</li>
+<li>Minimizing the contrastive loss alone (i.e. α = 0) does not guarantee generalization. Instead, invariance across augmentations must be explicitly enforced.</li>
+</ul>
+</li>
+<li>We generalize contrastive learning using refinements and show that <strong>learning on refinements</strong> is a sufficient condition for learning useful representations; this provides an alternative explanation to MI for the success of contrastive methods, namely that of <strong>causal refinements</strong> of downstream tasks.
+<ul>
+<li>Invariant under interventions for the refinements &ndash;&gt; invariant under downstream tasks. Straight forward, because it is only addition.</li>
+<li>Is the notion &ldquo;refinement&rdquo; has any connection with causality?</li>
+<li>Real world data often includes rich sources of metadata which can be used to guide the construction of refinements by grouping the data according to any available meta-data.</li>
+</ul>
+</li>
+</ul>
+<h4 id="remark">Remark</h4>
+<p>I slightly agree with the idea that &ldquo;there is in fact no causal language needed for this paper&rdquo;. as remarked by <em>AnonReviewer5</em> in ICLR2021.  In my view, the key idea of the paper is the idea of <em>refinement</em>, which is a concept has less connnection with causality. However, I believe the idea of invariance of conditionals is motivated from theory of causality. It is not novel, as similar idea has been proposed in papers like &ldquo;Conditional Variance Penalties and Domain Shift Robustness&rdquo;, but the application to contrastive representation learning makes sense. The organization and writing of this paper is worth to learn.</p>
+<h3 id="2-a-theoretical-analysis-of-contrastive-unsupervised-representation-learning-icml-2019">2 A Theoretical Analysis of Contrastive Unsupervised Representation Learning, ICML 2019</h3>
+<p>This paper proposes a new concept: <strong>latent classes</strong>, to formalize the notion of <strong>semantic similarity</strong>.</p>
+<p><em>Let</em> $\mathcal{C}$ <em>denote the set of all latent classes. Associated with each class</em> $c \in \mathcal{C}$ <em>is a probability distribution</em> $\mathcal{D}<em>c$ <em>over</em> $\mathcal{X}$. These latent classes can overlap arbitrarily: an image of a dog by a tree can appear in both $\mathcal{D}</em>{dog}$ &amp; $\mathcal{D}_{tree}$. Assume a distribution $\rho$ over the classes that characterizes how these classes naturally occur in the unlabeled data.</p>
+<p>Semantic similarity of two data points:
+positive pair: i.i.d. draws from the same class distribution $\mathcal{D}_c$ for some class $c$ picked randomly according to $\rho$.
+negative sample: from the marginal</p>
+<p>Assumption: the classes in downstream tasks and their associated data distributions $\mathcal{D}_c$ are the same as in the unlabeled data.</p>
+<h3 id="3-learning-explanations-that-are-hard-to-vary-iclr-2021">3 Learning Explanations That Are Hard To Vary, ICLR 2021</h3>
+<p>Multiple environments - infer a function $f$ (mechanism)</p>
+<p>When do we <em>not</em> learn invariances? &ndash; the rate at which different patterns are learned. Can be improved by</p>
+<ul>
+<li>Careful architecture design &ndash; hardcoding some invariance in the model architecture</li>
+<li>Pretraining &ndash; strong features already emerged and can be readily selected</li>
+</ul>
+<h3 id="4-on-mutual-information-maximization-for-representation-learning">4 On Mutual Information Maximization for Representation Learning</h3>
               
             </div>
           </div>
@@ -277,7 +329,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/mutual-information/">Mutual Information</a>
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/mutual-information-representation-learning/">Mutual Information, Representation Learning</a>
 
                   </div>
                 
@@ -290,7 +342,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/" data-tooltip="Mutual Information, Predictive Coding and Lipschitz Continuity">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -298,7 +350,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/representation-learning/" data-tooltip="Representation Learning">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/your-classfier2/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 2">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -316,7 +368,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/representation-learning/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -364,7 +416,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/" data-tooltip="Mutual Information, Predictive Coding and Lipschitz Continuity">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -372,7 +424,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/representation-learning/" data-tooltip="Representation Learning">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/your-classfier2/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 2">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -390,7 +442,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/representation-learning/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -420,7 +472,7 @@ where $T_\theta$ is parametrized by a deep neural network with parameters $\thet
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2Fmutual-information-predictive-coding-and-lipschitz-continuity%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2Frepresentation-learning%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
@@ -512,9 +564,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/beastlyprime.github.io\/mutual-information-predictive-coding-and-lipschitz-continuity\/';
+          this.page.url = 'https:\/\/beastlyprime.github.io\/representation-learning\/';
           
-            this.page.identifier = '\/mutual-information-predictive-coding-and-lipschitz-continuity\/'
+            this.page.identifier = '\/representation-learning\/'
           
         };
         (function() {
