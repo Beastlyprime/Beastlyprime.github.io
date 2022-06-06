@@ -6,8 +6,8 @@
     <description>Recent content in review on Yimeng Chen&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
-    <webMaster>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
+    <managingEditor>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
+    <webMaster>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
     <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://beastlyprime.github.io/tags/review/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Generalization and Detection</title>
       <link>https://beastlyprime.github.io/2022/02/generalization-and-detection/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/2022/02/generalization-and-detection/</guid>
       <description>&lt;p&gt;Thoughts on out-of-distribution generalization and detection.&lt;/p&gt;</description>
     </item>

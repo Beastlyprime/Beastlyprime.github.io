@@ -8,25 +8,25 @@
 <meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Yimeng Chen">
 <meta name="keywords" content="OOD">
-<meta name="description" content="Thoughts on out-of-distribution generalization and detection.">
+<meta name="description" content="A paper on shortcut removal, published at AISTATS 2022.">
 
 
-<meta property="og:description" content="Thoughts on out-of-distribution generalization and detection.">
+<meta property="og:description" content="A paper on shortcut removal, published at AISTATS 2022.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Generalization and Detection">
-<meta name="twitter:title" content="Generalization and Detection">
-<meta property="og:url" content="https://beastlyprime.github.io/2022/02/generalization-and-detection/">
-<meta property="twitter:url" content="https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+<meta property="og:title" content="Causally Motivated Shortcut Removal Using Auxiliary Labels">
+<meta name="twitter:title" content="Causally Motivated Shortcut Removal Using Auxiliary Labels">
+<meta property="og:url" content="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
 <meta property="og:site_name" content="Yimeng Chen&#39;s site">
-<meta property="og:description" content="Thoughts on out-of-distribution generalization and detection.">
-<meta name="twitter:description" content="Thoughts on out-of-distribution generalization and detection.">
+<meta property="og:description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta name="twitter:description" content="A paper on shortcut removal, published at AISTATS 2022.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-02-22T00:00:00">
+    <meta property="article:published_time" content="2022-03-29T00:00:00">
   
   
-    <meta property="article:modified_time" content="2022-02-22T00:00:00">
+    <meta property="article:modified_time" content="2022-03-29T00:00:00">
   
   
   
@@ -36,7 +36,7 @@
   
   
     
-      <meta property="article:tag" content="review">
+      <meta property="article:tag" content="paper notes">
     
   
 
@@ -53,8 +53,8 @@
 
 
 
-  <meta property="og:image" content="https://beastlyprime.github.io/images/mappings.jpg">
-  <meta property="twitter:image" content="https://beastlyprime.github.io/images/mappings.jpg">
+  <meta property="og:image" content="https://beastlyprime.github.io/images/v-shortcut.png">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/v-shortcut.png">
 
 
 
@@ -64,14 +64,14 @@
   <meta property="twitter:image" content="https://beastlyprime.github.io/images/author.jpg">
 
 
-    <title>Generalization and Detection</title>
+    <title>Causally Motivated Shortcut Removal Using Auxiliary Labels</title>
 
     <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+    <link rel="canonical" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -211,15 +211,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Generalization and Detection
+      Causally Motivated Shortcut Removal Using Auxiliary Labels
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2022-02-22T00:00:00Z">
+      <time itemprop="datePublished" datetime="2022-03-29T00:00:00Z">
         
-  February 22, 2022
+  March 29, 2022
 
       </time>
     
@@ -238,11 +238,27 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Thoughts on out-of-distribution generalization and detection.</p>
-<p>The generalization error of model $\hat{f}$ is defined as $\mathcal{R}(\hat{f}) - \inf_{f \in \mathcal{F}} \mathcal{R}(f)$ , where $\mathcal{R}$ denotes the expected loss. The error can be further decomposed into three parts. The first one is the optimization loss $\epsilon_{opt} :=\hat{\mathcal{R}}(\hat{f}) - \inf_{f \in \mathcal{F}_{\delta}} \hat{\mathcal{R}}(f)$, i.e. the loss in optimizing $\hat{f}$ in $\mathcal{F}_\delta$ . The second one is $\epsilon_{stat}:= \mathcal{R}(\hat{f}) - \hat{\mathcal{R}}(\hat{f})$, which is the difference between the empirical and real losses. The last one is the theoretical error induced by the limitation of $\mathcal{F}_\delta$ .</p>
-<p>Study on robustness and generalization mostly concerns $\epsilon_{stat}$.  Suppose $\hat{f}(x) = \hat{f} \circ \hat{g}(x) = \hat{f}(\hat{z}) $ .  $\hat{g}$ is the learned representation mapping. Generally,  the problem occurs when $\hat{\mathcal{R}}_{train}(\hat{f})$ and $\hat{\mathcal{R}}_{test}(\hat{f})$ have large difference. Such difference orginates from the fact that $\hat{\mathbb{P}}_{train}$ is a partial sampling of the real $\mathbb{P}$.</p>
-<p>Robustness and out-of-distribution generalization consider different kinds of distribution shift. We can view the input as a original form of representation. From this view, the robustness and bias-shift can be unified as studies on distribution shift in different representation space.</p>
-<p>Similar to that, outlier detection and</p>
+              <p>A paper on shortcut removal, published at AISTATS 2022.</p>
+<p><strong>Abstract</strong>: A flexible, causally-motivated approach to training robust predictors by discouraging the use of specific shortcuts, focusing on a common setting where a robust predictor could achieve optimal iid generalization in principle, but is overshadowed by a shortcut predictor in practice.</p>
+<p><strong>Problem setup</strong>: We consider a supervised learning setup where the task is to construct a predictor $f(X)$ parameterized by weights w that predicts a label $Y$ (e.g., foreground object) from an input $X$ (e.g., image). In addition, we have an auxiliary label $V$ (e.g., background label) available only at training time that labels a factor of variation along which we hope the model will exhibit some invariance (e.g., background type). $V$ is <strong>binary</strong>.</p>
+<p>We assume that there is a sufficient statistic $X^∗$ such that $Y$ only affects $X$ through $X^∗$, and $X^∗$ can be fully recovered from X via the function $X^∗ := e(X)$.</p>
+<p><strong>Method</strong>:</p>
+<ul>
+<li>Weighting to Recover $P^◦$</li>
+<li>Use a MMD penalty between ${V=1}$ and ${V = 0}$ as regularization under $P^◦$</li>
+</ul>
+<p><strong>Theory:</strong></p>
+<ul>
+<li>
+<p>Proposition 1. Under $P^◦$, the Bayes optimal predictor is (i) only a function of $X^∗$, and (ii) an optimal risk-invariant predictor with respect to P.</p>
+</li>
+<li>
+<p>MMD penalty can bound the structural risk gap and the learning gap</p>
+</li>
+<li>
+<p>Enforcing the invariance penalty without reweighting leads to a model that is inconsistent with the causal DAG, and is hence biased</p>
+</li>
+</ul>
               
             </div>
           </div>
@@ -254,7 +270,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/review/">review</a>
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-notes/">paper notes</a>
 
                   </div>
                 
@@ -267,7 +283,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -275,7 +291,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -293,13 +309,13 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -347,7 +363,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -355,7 +371,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -373,13 +389,13 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/02/generalization-and-detection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -409,13 +425,13 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F02%2Fgeneralization-and-detection%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcausally-motivated-shortcut-removal-using-auxiliary-labels%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F02%2Fgeneralization-and-detection%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcausally-motivated-shortcut-removal-using-auxiliary-labels%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
@@ -507,9 +523,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/beastlyprime.github.io\/2022\/02\/generalization-and-detection\/';
+          this.page.url = 'https:\/\/beastlyprime.github.io\/2022\/03\/causally-motivated-shortcut-removal-using-auxiliary-labels\/';
           
-            this.page.identifier = '\/2022\/02\/generalization-and-detection\/'
+            this.page.identifier = '\/2022\/03\/causally-motivated-shortcut-removal-using-auxiliary-labels\/'
           
         };
         (function() {

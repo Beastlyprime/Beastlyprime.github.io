@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Yimeng Chen">
+<meta name="keywords" content="OOD">
+<meta name="description" content="A study on spurious correlations which is induced by a causal pespective of stress tests, published at NeurIPS 2021.">
+
+
+<meta property="og:description" content="A study on spurious correlations which is induced by a causal pespective of stress tests, published at NeurIPS 2021.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+<meta name="twitter:title" content="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+<meta property="og:url" content="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+<meta property="og:site_name" content="Yimeng Chen&#39;s site">
+<meta property="og:description" content="A study on spurious correlations which is induced by a causal pespective of stress tests, published at NeurIPS 2021.">
+<meta name="twitter:description" content="A study on spurious correlations which is induced by a causal pespective of stress tests, published at NeurIPS 2021.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-03-20T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2022-03-20T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Machine Learning">
+    
+  
+  
+    
+      <meta property="article:tag" content="paper-learning">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@Beastlyprime">
+
+
+  <meta name="twitter:creator" content="@Beastlyprime">
+
+
+
+
+
+
+  <meta property="og:image" content="https://beastlyprime.github.io/images/ci-2graph.jpg">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/ci-2graph.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://beastlyprime.github.io/images/author.jpg">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/author.jpg">
+
+
+    <title>Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests</title>
+
+    <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://beastlyprime.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://beastlyprime.github.io/">Yimeng Chen&#39;s site</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://beastlyprime.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://beastlyprime.github.io/images/author.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://beastlyprime.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://beastlyprime.github.io/images/author.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Yimeng Chen</h4>
+        
+          <h5 class="sidebar-profile-bio">A bird in the forest of AI.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://beastlyprime.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://beastlyprime.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://beastlyprime.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://beastlyprime.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://beastlyprime.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://beastlyprime.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2022-03-20T00:00:00Z">
+        
+  March 20, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://beastlyprime.github.io/categories/machine-learning">Machine Learning</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>A study on spurious correlations which is induced by a causal pespective of stress tests, published at NeurIPS 2021.</p>
+<h2 id="introduction">Introduction</h2>
+<p>What distinguish this paper from other literature on the general distribution-shift topic is its focus on stress tests, which specifies the shift on the test environment and concise the required characteristic of models. The later thus induces the definition of <em>counterfactual invariance</em>. How this paper define the stress tests?</p>
+<p>First in the introduction, the stress tests are illustrated by the following example:</p>
+<blockquote>
+<p>For example, we might test a sentiment analysis tool by changing one proper noun for another (“tasty Mexican food” to “tasty Indian food”), with the expectation that the predicted sentiment should not change.</p>
+</blockquote>
+<p>What is the meaning of stress tests?</p>
+<blockquote>
+<p>This kind of perturbative stress testing is increasingly popular: it is straightforward to understand and offers a natural way to test the behavior of models against the expectations of practitioners [Rib+20; Wu+19; Nai+18] (3 papers on NLP).</p>
+</blockquote>
+<p>Intuitively, models that pass such stress tests are preferable to those that do not. However, fundamental questions about the use and meaning of perturbative stress tests remain open. What is the problem in using stress tests?</p>
+<blockquote>
+<p>For instance, what is the connection between passing stress tests and model performance on prediction?</p>
+</blockquote>
+<p>I think it depends on how the stress tests are designed. This idea relates the next question:</p>
+<blockquote>
+<p>Eliminating predictor dependence on a spurious correlation should help with domain shifts that affect the spurious correlation—but how do we make this precise?</p>
+</blockquote>
+<p>However, this moves the point to what characteristic of models we really want behind using stress test. The following question strengthen this point:</p>
+<blockquote>
+<p>how should we develop models that pass stress tests when our ability to generate perturbed examples is limited? For example, automatically perturbing the sentiment of a document in a general fashion is difficult.</p>
+</blockquote>
+<p>As a result, what central to us is how to get models which can pass stress tests, even with no access to stress test data. As introduced, this paper:</p>
+<ul>
+<li>formalize passing stress tests as <em>counterfactual invariance</em>, a condition on how a predictor should behave when given certain (unobserved) counterfactual input data.</li>
+<li>derive implications of counterfactual invariance that can be measured in the observed data. Regularizing predictors to satisfy these observable implications provides a means for achieving (partial) counterfactual invariance.</li>
+<li>connect counterfactual invariance to robust prediction under certain domain shifts, with the aim of clarifying what counterfactual invariance buys and when it is desirable.</li>
+</ul>
+<p>Here 2 questions can be raised: <em>Does the specification in accordance with existing stress tests? Does the stress test best fits the underlying purpose?</em> We will see whether these can be solved in the following contexts.</p>
+<h2 id="counterfactual-invariance-and-two-causal-structure">Counterfactual Invariance and Two Causal structure</h2>
+<p><strong>Def.</strong> (<em>counterfactual invariance</em>) A predictor f is <em>counterfactually invariant to</em> Z if f(X(z)) = f(X(z′)) almost everywhere, for all z, z′ in the sample space of Z. X(z) denotes the counterfactual X we would have seen had Z been set to z, leaving all else fixed. When Z is clear from context, we’ll just say the predictor is counterfactually invariant.</p>
+<p>To discuss counterfacture invariance, it based on how the <em>true</em> label behaves under interventions on parts of the input data. As a result we need to specify the causal structure of the collected data.</p>
+<blockquote>
+<p>We will see that the true causal structure fundamentally affects both the implications of counterfactual invariance, and the techniques we use to achieve it. To study this phenomenon, we’ll use two causal structures that are commonly encountered in applications <strong>(Why common?)</strong>; see Figure 1.</p>
+</blockquote>
+<p>The two structures are defined as follows</p>
+<p><img src="https://beastlyprime.github.io/images/ci-2graph.jpg" alt="ci-2graph"></p>
+<h3 id="the-first-one-predicition-in-the-causal-direction">The first one, predicition in the causal direction</h3>
+<p>Notice that the only thing that’s relevant about these latent variables is their causal relationship with Y and Z. Accordingly, we’ll decompose the observed variable X into parts defined by their causal relationships with Y and Z. We remain agnostic to the semantic interpretation of these parts. Namely, we define $X_{Z}^⊥$ as the part of X that is not causally influenced by Z (but may influence Y ), $X_{Y}^⊥$ as the part that does not causally influence Y (but may be influenced by Z), and $X_{Y∧Z}$ is the remaining part that is both influenced by Z and that influences Y .</p>
+<p>**Question: why the part  $X_{Y∧Z}$  exists?** An example was given:</p>
+<blockquote>
+<p>a very enthusiastic reviewer might write a longer, more detailed review, which will in turn be more helpful.</p>
+</blockquote>
+<p>It seems that $Z$  is &ldquo;being enthusiastic&rdquo;, $X_{Y∧Z}$ is &ldquo;being a longer, more detailed review&rdquo;. Can a stress test be designed w.r.t. such $Z$ ? Why models should be invariant to such $Z$ ? I am a little bit confusing.</p>
+<h3 id="the-second-predicition-in-the-anti-causal-direction">The second, predicition in the anti-causal direction</h3>
+<p>In this graph, the observed X is influenced by both Y and Z. The following example is given:</p>
+<blockquote>
+<p><strong>Example 2.2</strong> We want to predict the star rating Y of movie reviews from the text X. However, we find that predictions are influenced by the movie genre Z.</p>
+</blockquote>
+<p><strong>Question: why in this example, the movie genre Z is not directly influence the star rating Y?</strong> **What is the $X_{Y∧Z}$?**</p>
+<blockquote>
+<p>For example, if Adam Sandler tends to appear in good comedy movies but bad movies of other genres then seeing “Sandler” in the text induces a dependency between sentiment and genre.</p>
+</blockquote>
+<p>**Question: why &ldquo;Adam Sandler&rdquo;, the name of an actor, is in $X_{Y∧Z}$ ?**</p>
+<p>Second, Z and Y may be associated due to a common cause, or due to selection effects in the data collection protocol—this is represented by the dashed line between Z and Y . For example, fans of romantic comedies may tend to give higher reviews (to all films) than fans of horror movies. Here &ldquo;fans of some genre&rdquo; is the confounder.</p>
+<h3 id="more-explainations-on-the-non-causal-associations-between-y-and-z">More explainations on the non-causal associations between Y and Z</h3>
+<p>First, Y and Z may be <em>confounded</em>: they are both influenced by an unobserved common cause U .</p>
+<blockquote>
+<p>For example, people who review books may be more upbeat than people who review clothing. This leads to positive sentiments and high helpfulness votes for books, creating an association between sentiment and helpfulness.</p>
+</blockquote>
+<p>In this example, &ldquo;reviewer type&rdquo; is the confounder.</p>
+<p>Second, Y and Z may be subject to <em>selection</em>: there is some condition (event) S that depends on Y and Z, such that a data point from the population is included in the sample only if S = 1 holds.</p>
+<blockquote>
+<p>For example, our training data might only include movies with at least 100 reviews. If only excellent horror movies have so many reviews (but most rom-coms get that many), then this selection would induce an association between genre and score.</p>
+</blockquote>
+<p>Here Y and Z are causes of S.</p>
+<p>In addition to the non-causal dashed-line relationship, there is also dependency induced by between Y and Z by $X_{Y ∧Z}$ . Whether or not each of these dependencies is “spurious” is a problem-specific judgement that must be made by each analyst based on their particular use case. However, there is a special case that captures a common intuition for purely spurious association.</p>
+<p><strong>Definition 2.3</strong>. We say that the association between Y and Z is <em>purely spurious</em> if Y ⊥ X | $X_Z^⊥, Z$ . That is, if the dashed-line association did not exist (removed by conditioning on Z) then the part of X that is not influenced by Z would suffice to estimate Y .</p>
+<p>With that language, many existing works focus purely spurious features.</p>
+<h2 id="observable-signatures-of-counterfactually-invariant-predictors">Observable Signatures of Counterfactually Invariant Predictors</h2>
+<p>How the counterfactually invariant predictors be like? It depends only on $X_Z^⊥$, intuitively. To formalize that idea, we should first show that such a $X_Z^⊥$ is well-defined.
+<strong>Lemma 3.1.</strong> <em>Let</em> $X_Z^⊥$ <em>be a</em> X <em>-measurable random variable such that, for all measurable functions</em> f <em>, we have that</em> f <em>is counterfactually invariant if and only if</em> f(X) <em>is</em> $X_Z^⊥$*-measurable. If* Z *is discrete* *then such a* $X_Z^⊥$ *exists.*</p>
+<p>Now counterfactually invariant predictors are defined as $X_Z^⊥$-measurable functions.</p>
+<p><strong>Theorem</strong> 3.2. <em>If</em> f <em>is a counterfactually invariant predictor:</em></p>
+<ol>
+<li><em>Under the anti-causal graph,</em> f(X) ⊥ Z | Y <em>.</em></li>
+<li><em>Under the causal-direction graph, if</em> Y <em>and</em> Z <em>are not subject to selection (but possibly confounded),</em> f(X) ⊥ Z*.*</li>
+<li><em>Under the causal-direction graph, if the association is purely spurious</em> <em>, and</em> Y <em>and</em> Z <em>are not confounded (but possibly selected),</em> f(X) ⊥ Z | Y <em>.</em></li>
+</ol>
+<p>The procedure is then: if the data has causal-direction structure and the Y ↔ Z association is due to confounding, add the marginal regularization term to the the training objective. If the data has anti-causal structure, or the association is due to selection, add the conditional regularization term instead.</p>
+<p>A key point is that the regularizer we must use depends on the true causal structure. The conditional and marginal independence conditions are generally <strong>incompatible</strong>. Enforcing the condition that is mismatched to the true underlying causal structure may fail to encourage counterfactual invariance, or may throw away more information than is required.</p>
+<h2 id="how-counterfactual-invariance-relates-to-ood-accuracy">How counterfactual invariance relates to OOD accuracy</h2>
+<ul>
+<li>First, we must articulate the set of domain shifts to be considered. In our setting, the natural thing is to hold the causal relationships fixed across domains, but to allow the non-causal (“spurious”) dependence between Y and Z to vary. We want to capture spurious domain shifts by considering domain shifts induced by selection or confounding.</li>
+<li>Changes to the marginal distribution of Y will affect the risk of a predictor, even in the absence of any spurious association between Y and Z. Therefore, we restrict to shifts that preserve the marginal distribution of Y .</li>
+</ul>
+<p><strong>Definition 4.1.</strong> (causally compatible) We say that distributions <em>P</em>, <em>Q</em> are <em>causally compatible</em> if both obey the same causal graph, <em>P</em>(<em>Y</em> ) = <em>Q</em>(<em>Y</em> ), and there is a confounder <em>U</em> and/or selection conditions <em>S</em>, <em>S</em> ̃ such that <em>P</em>=$\int$<em>X</em>,<em>Y</em>,<em>Z</em> | <em>U</em>,<em>S</em>=1)d<em>P</em> ̃(<em>U</em>) and <em>Q</em>=$\int$(<em>X</em>,<em>Y</em>,<em>Z</em> | <em>U</em>,<em>S</em> ̃=1)d<em>Q</em> ̃(<em>U</em>) for some <em>P</em> ̃ ( <em>U</em> ) , <em>Q</em> ̃ ( <em>U</em> ) .</p>
+<p><strong>Theorem 4.2.</strong> <em>Suppose that the target distribution Q is causally</em> <em>compatible with the training distribution</em> <em>P</em>*. Suppose that any of the following conditions hold:***</p>
+<p>​		   1.<em>the data obeys the anti-causal graph</em></p>
+<ol start="2">
+<li><em>the data obeys the causal direction graph, there is no confounding (but possibly selection), and the association is purely spurious,  or</em></li>
+<li><em>the data obeys the causal-direction graph, there is no selection (but possibly confounding),</em> <em>the association is purely spurious and the causal effect of $X^⊥_Z$</em>on Y is additive.</li>
+</ol>
+<p><em>Then, the training domain counterfactually invariant risk minimizer is also the target domain counterfactually invariant risk minimizer.</em></p>
+<p><em>Remark</em> 4.3*.* The causal case with confounding requires an additional assumption (additive structure) because, e.g., an interaction between confounder and $X^⊥_Z$ can yield a case where $X^⊥_Z$ and *Y* have a different relationship in each domain (whence, out-of-domain learning is impossible).</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-learning/">paper-learning</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" data-tooltip="Causally Motivated Shortcut Removal Using Auxiliary Labels">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/02/generalization-and-detection/" data-tooltip="Generalization and Detection">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Yimeng Chen. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" data-tooltip="Causally Motivated Shortcut Removal Using Auxiliary Labels">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/02/generalization-and-detection/" data-tooltip="Generalization and Detection">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcounterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcounterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://beastlyprime.github.io/images/author.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Yimeng Chen</h4>
+    
+      <div id="about-card-bio">A bird in the forest of AI.</div>
+    
+    
+    
+      <div id="about-card-job">
+        <a class="fa fa-envelope" href="mailto:chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com"></a>
+        <br/>
+      </div>
+    
+    
+      <div id="about-card-location">
+        <a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=100009746146719"></a>
+        <br/>
+      </div>
+    
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://beastlyprime.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://beastlyprime.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/beastlyprime.github.io\/2022\/03\/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests\/';
+          
+            this.page.identifier = '\/2022\/03\/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'Yimeng';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+      messageStyle: 'none'
+    });
+  </script>
+
+
+
+    
+  </body>
+</html>
+

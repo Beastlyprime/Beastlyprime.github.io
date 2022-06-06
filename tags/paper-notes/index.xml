@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>paper notes on Yimeng Chen&#39;s site</title>
+    <link>https://beastlyprime.github.io/tags/paper-notes/</link>
+    <description>Recent content in paper notes on Yimeng Chen&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
+    <webMaster>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
+    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://beastlyprime.github.io/tags/paper-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Causally Motivated Shortcut Removal Using Auxiliary Labels</title>
+      <link>https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/</guid>
+      <description>&lt;p&gt;A paper on shortcut removal, published at AISTATS 2022.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

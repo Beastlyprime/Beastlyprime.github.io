@@ -6,18 +6,36 @@
     <description>Recent content on Yimeng Chen&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
-    <webMaster>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
-    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <managingEditor>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
+    <webMaster>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
+    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://beastlyprime.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Causally Motivated Shortcut Removal Using Auxiliary Labels</title>
+      <link>https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/</guid>
+      <description>&lt;p&gt;A paper on shortcut removal, published at AISTATS 2022.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests</title>
+      <link>https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/</guid>
+      <description>&lt;p&gt;A study on spurious correlations which is induced by a causal pespective of stress tests, published at NeurIPS 2021.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Generalization and Detection</title>
       <link>https://beastlyprime.github.io/2022/02/generalization-and-detection/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/2022/02/generalization-and-detection/</guid>
       <description>&lt;p&gt;Thoughts on out-of-distribution generalization and detection.&lt;/p&gt;</description>
     </item>
@@ -26,43 +44,25 @@
       <title>Mutual Information, Predictive Coding and Lipschitz Continuity</title>
       <link>https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/mutual-information-predictive-coding-and-lipschitz-continuity/</guid>
       <description>&lt;p&gt;A survey.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Representation Learning</title>
-      <link>https://beastlyprime.github.io/representation-learning/</link>
+      <title>Your Classifier is Secretly An EBM and You Should Treat It Like One</title>
+      <link>https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/representation-learning/</guid>
-      <description>&lt;p&gt;A survey.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 1</title>
-      <link>https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one-part-1/</link>
-      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one-part-1/</guid>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/</guid>
       <description>&lt;p&gt;This is an inspiring work on ICLR 2020 about how to realize the potential of generative models on downstream discriminative problems.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Your Classifier is Secretly An EBM and You Should Treat It Like One: Part 2</title>
-      <link>https://beastlyprime.github.io/your-classfier2/</link>
-      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/your-classfier2/</guid>
-      <description>&lt;p&gt;Applications, limitations and Conclusion&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Welcome to My Blog</title>
       <link>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</link>
       <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng@amss.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</guid>
       <description>&lt;p&gt;Hello all! This blog will include my thoughts on the contemporaneous fantastic works in the area of machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
     </item>
