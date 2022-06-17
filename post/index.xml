@@ -14,6 +14,15 @@
     
     
     <item>
+      <title>Welcome &amp; About Me</title>
+      <link>https://beastlyprime.github.io/2020/07/welcome-about-me/</link>
+      <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/2020/07/welcome-about-me/</guid>
+      <description>&lt;p&gt;Hello! This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Causally Motivated Shortcut Removal Using Auxiliary Labels</title>
       <link>https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/</link>
       <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
@@ -47,15 +56,6 @@
       <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/</guid>
       <description>&lt;p&gt;This is an inspiring work on ICLR 2020 about how to realize the potential of generative models on downstream discriminative problems.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Welcome to My Blog</title>
-      <link>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</link>
-      <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
-      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</guid>
-      <description>&lt;p&gt;Hello all! This blog will include my thoughts on the contemporaneous fantastic works in the area of machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
     </item>
     
   </channel>

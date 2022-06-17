@@ -14,12 +14,12 @@
     
     
     <item>
-      <title>Welcome to My Blog</title>
-      <link>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</link>
+      <title>Welcome &amp; About Me</title>
+      <link>https://beastlyprime.github.io/2020/07/welcome-about-me/</link>
       <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
       <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/2020/07/welcome-to-my-blog/</guid>
-      <description>&lt;p&gt;Hello all! This blog will include my thoughts on the contemporaneous fantastic works in the area of machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
+      <guid>https://beastlyprime.github.io/2020/07/welcome-about-me/</guid>
+      <description>&lt;p&gt;Hello! This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.&lt;/p&gt;</description>
     </item>
     
   </channel>
