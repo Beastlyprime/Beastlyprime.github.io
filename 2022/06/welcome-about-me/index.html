@@ -16,9 +16,9 @@
     
   },
   "name":"Yimeng Chen\u0027s site",
-  "description":"\u003cp\u003eA paper on shortcut removal, published at AISTATS 2022.\u003c\/p\u003e",
-  "url":"https:\/\/beastlyprime.github.io\/2022\/03\/causally-motivated-shortcut-removal-using-auxiliary-labels\/",
-  "keywords":"[OOD]"
+  "description":"\u003cp\u003eThis blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.\u003c\/p\u003e",
+  "url":"https:\/\/beastlyprime.github.io\/2022\/06\/welcome-about-me\/",
+  "keywords":"[introduction]"
 }
 
 </script>
@@ -27,36 +27,36 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yimeng Chen">
-<meta name="keywords" content="OOD">
-<meta name="description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta name="keywords" content="introduction">
+<meta name="description" content="This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.">
 
 
-<meta property="og:description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta property="og:description" content="This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Causally Motivated Shortcut Removal Using Auxiliary Labels">
-<meta name="twitter:title" content="Causally Motivated Shortcut Removal Using Auxiliary Labels">
-<meta property="og:url" content="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
-<meta property="twitter:url" content="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
+<meta property="og:title" content="Welcome &amp; About Me">
+<meta name="twitter:title" content="Welcome &amp; About Me">
+<meta property="og:url" content="https://beastlyprime.github.io/2022/06/welcome-about-me/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/2022/06/welcome-about-me/">
 <meta property="og:site_name" content="Yimeng Chen&#39;s site">
-<meta property="og:description" content="A paper on shortcut removal, published at AISTATS 2022.">
-<meta name="twitter:description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta property="og:description" content="This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.">
+<meta name="twitter:description" content="This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-03-29T00:00:00">
+    <meta property="article:published_time" content="2022-06-21T00:00:00">
   
   
-    <meta property="article:modified_time" content="2022-03-29T00:00:00">
+    <meta property="article:modified_time" content="2022-06-21T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="Machine Learning">
-    
   
   
     
-      <meta property="article:tag" content="paper notes">
+      <meta property="article:section" content="by-talk">
+    
+  
+  
+    
+      <meta property="article:tag" content="by-talk">
     
   
 
@@ -76,18 +76,18 @@
 
 
 
-  <meta property="og:image" content="https://beastlyprime.github.io/images/v-shortcut.png">
-  <meta property="twitter:image" content="https://beastlyprime.github.io/images/v-shortcut.png">
+  <meta property="og:image" content="https://beastlyprime.github.io/images/GWsmall.jpg">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/GWsmall.jpg">
 
 
-    <title>Causally Motivated Shortcut Removal Using Auxiliary Labels</title>
+    <title>Welcome &amp; About Me</title>
 
     <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
+    <link rel="canonical" href="https://beastlyprime.github.io/2022/06/welcome-about-me/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -227,15 +227,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      Causally Motivated Shortcut Removal Using Auxiliary Labels
+      Welcome &amp; About Me
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-03-29T00:00:00Z">
+      <time datetime="2022-06-21T00:00:00Z">
         
-  March 29, 2022
+  June 21, 2022
 
       </time>
     
@@ -244,7 +244,7 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://beastlyprime.github.io/categories/machine-learning">Machine Learning</a>
+      <a class="category-link" href="https://beastlyprime.github.io/categories/by-talk">by-talk</a>
     
   
 
@@ -254,25 +254,50 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>A paper on shortcut removal, published at AISTATS 2022.</p>
-<p><strong>Abstract</strong>: A flexible, causally-motivated approach to training robust predictors by discouraging the use of specific shortcuts, focusing on a common setting where a robust predictor could achieve optimal iid generalization in principle, but is overshadowed by a shortcut predictor in practice.</p>
-<p><strong>Problem setup</strong>: We consider a supervised learning setup where the task is to construct a predictor $f(X)$ parameterized by weights w that predicts a label $Y$ (e.g., foreground object) from an input $X$ (e.g., image). In addition, we have an auxiliary label $V$ (e.g., background label) available only at training time that labels a factor of variation along which we hope the model will exhibit some invariance (e.g., background type). $V$ is <strong>binary</strong>.</p>
-<p>We assume that there is a sufficient statistic $X^∗$ such that $Y$ only affects $X$ through $X^∗$, and $X^∗$ can be fully recovered from X via the function $X^∗ := e(X)$.</p>
-<p><strong>Method</strong>:</p>
+              <p>This blog includes some thoughts on recent fantastic works in machine learning, natural language processing and applied mathematics.</p>
+<blockquote>
+<p>Reading maketh a full man; conference a ready man; and writing an exact man.</p>
+</blockquote>
+<h1 id="about-me">About me</h1>
+<p>Hi, I am Yimeng Chen (陈奕梦), a fourth year Ph.D. student in Statistics at Academy of Mathematics and Systems Science, CAS. Before that, I recieved my Bachelor degree in Physics at the University of Chinese Academy of Science.  Up to now, I have 1 years of research experience in Physics and 3 years in Natural Language Processing and Machine Learning.</p>
+<p>I like to think about the general mechanics behind algorithms in different forms. I am seeking for designing machine learning algorithms that are both practical and well grounded by theories.</p>
+<h2 id="contact">Contact</h2>
+<p>I am open to academic discussion and coorperation, and also looking forward to visiting and job oppotunities. Please feel free to contact me if you are interested.</p>
 <ul>
-<li>Weighting to Recover $P^◦$</li>
-<li>Use a MMD penalty between ${V=1}$ and ${V = 0}$ as regularization under $P^◦$</li>
+<li><a href="mailto:chenyimeng16@icloud.com;chenyimeng14@mails.ucas.ac.cn">Email me!</a></li>
+<li>WeChat: beastlyprime</li>
 </ul>
-<p><strong>Theory:</strong></p>
+<h2 id="reseach-interests">Reseach interests</h2>
 <ul>
-<li>
-<p>Proposition 1. Under $P^◦$, the Bayes optimal predictor is (i) only a function of $X^∗$, and (ii) an optimal risk-invariant predictor with respect to P.</p>
+<li>Out-of-distribution generalization.</li>
+<li>Uncertainty calibration and out-of-distribution detection.</li>
+</ul>
+<h2 id="publications">Publications</h2>
+<p><a href="https://proceedings.neurips.cc/paper/2021/hash/71a8b2ffe0b594a5c1b3c28090384fd7-Abstract.html">Uncertainty Calibration for Ensemble-Based Debiasing Methods</a> [<a href="../../../files/Poster-neurips21.pdf">Poster</a>] [<a href="../../../files/Report-neurips-21.pdf">Slide</a>]<br>
+Ruibin Xiong*, Yimeng Chen*, Liang Pang, Xueqi Cheng, Zhiming Ma and Yanyan Lan.  (<strong>NeurIPS 2021</strong>)</p>
+<p><a href="https://www.ijcai.org/Proceedings/2020/516">Evaluating Natural Language Generation via Unbalanced Optimal Transport</a> [<a href="../../../files/Poster-IJCAI20.pdf">Poster</a>] [<a href="../../../files/Report-ijcai.pdf">Slide</a>] [<a href="https://www.ijcai.org/proceedings/2020/video/25165">Video</a>]<br>
+Yimeng Chen, Yanyan Lan, Ruibin Xiong, Liang Pang, Zhiming Ma and Xueqi Cheng. (<strong>IJCAI 2020</strong>)</p>
+<p><a href="https://www.semanticscholar.org/paper/Extraction-of-tight-binding-parameters-from-in-situ-Zhong-Chen/bbf784eaf042cceae4d8c9703e50da52e602a2e4">Extraction of Tight Binding Parameters From In-situ ARPES on the Continuously Doped Surface of Cuprates</a><br>
+Yigui Zhong*, Yimeng Chen*, Jianyu Guan, Jin Zhao, Zhicheng Rao, Cenyao Tang, H. Liu, Yujie Sun and Hong Ding. Science China Physics, Mechanics &amp; Astronomy 61 (2018): 1-5.</p>
+<h2 id="open-source-projects">Open-Source Projects</h2>
+<ul>
+<li><a href="https://github.com/Beastlyprime/lazy_emd">Lazy EMD</a>: the Lazy Earth Mover&rsquo;s Distance, which relaxes the hard constraints on the marginals in EMD. It has better matching performance when used as the distance between sentences.</li>
+<li><a href="https://github.com/Beastlyprime/awesome-AI4Drug-papers">Awesome-AI4Drug-Papers</a>: A collection of AI for Drug Design related papers (2021-2022).</li>
+<li><a href="https://github.com/Beastlyprime/awesome-anti-shortcut-learning">Awesome: anti-Shortcut Learning</a>: A curated list of &lsquo;anti-shortcut learning&rsquo;, &lsquo;combating spurious correlations/features/attributes&rsquo;, and &lsquo;debiasing&rsquo; related papers. In progress.</li>
+</ul>
+<h2 id="education">Education</h2>
+<ul>
+<li>Academy of Mathematics and Systems Science, CAS. <em>Sep 2018-Present</em>
+<ul>
+<li>Doctor of Philosophy in Statistics</li>
+<li>Supervisor: Prof. <a href="http://homepage.amss.ac.cn/research/homePage/8eb59241e2e74d828fb84eec0efadba5/myHomePage.html">Zhiming Ma</a> and Prof. <a href="https://scholar.google.com/citations?user=mNfCP3gAAAAJ">Yanyan Lan</a></li>
+</ul>
 </li>
-<li>
-<p>MMD penalty can bound the structural risk gap and the learning gap</p>
-</li>
-<li>
-<p>Enforcing the invariance penalty without reweighting leads to a model that is inconsistent with the causal DAG, and is hence biased</p>
+<li>University of Chinese Academy of Science, <em>Sep 2014-July 2018</em>
+<ul>
+<li>Bachelor of Science in Physics</li>
+<li>Supervisor: Prof. <a href="https://scholar.google.com/citations?user=rffr99kAAAAJ">Hong Ding</a></li>
+</ul>
 </li>
 </ul>
               
@@ -288,7 +313,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-notes/">paper notes</a>
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/by-talk/">by-talk</a>
 
                   </div>
                 
@@ -301,7 +326,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="NEXT: Intrinsic Dimension of Data Representations in Deep Neural Networks">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -309,7 +334,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests" aria-label="PREVIOUS: Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="PREVIOUS: Intrinsic Dimension of Data Representations in Deep Neural Networks">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -327,13 +352,13 @@
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/welcome-about-me/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/welcome-about-me/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
@@ -372,7 +397,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="NEXT: Intrinsic Dimension of Data Representations in Deep Neural Networks">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -380,7 +405,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests" aria-label="PREVIOUS: Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="PREVIOUS: Intrinsic Dimension of Data Representations in Deep Neural Networks">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -398,13 +423,13 @@
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/welcome-about-me/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/welcome-about-me/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
@@ -429,13 +454,13 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcausally-motivated-shortcut-removal-using-auxiliary-labels%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fwelcome-about-me%2F" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcausally-motivated-shortcut-removal-using-auxiliary-labels%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fwelcome-about-me%2F" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
@@ -510,15 +535,6 @@ $(document).ready(function() {
 });
 </script>
 
-
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      CommonHTML: { linebreaks: { automatic: true } },
-      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
-      messageStyle: 'none'
-    });
-  </script>
 
 
 

@@ -16,9 +16,9 @@
     
   },
   "name":"Yimeng Chen\u0027s site",
-  "description":"\u003cp\u003eA paper on shortcut removal, published at AISTATS 2022.\u003c\/p\u003e",
-  "url":"https:\/\/beastlyprime.github.io\/2022\/03\/causally-motivated-shortcut-removal-using-auxiliary-labels\/",
-  "keywords":"[OOD]"
+  "description":"\u003cp\u003eThis paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.\u003c\/p\u003e",
+  "url":"https:\/\/beastlyprime.github.io\/2022\/06\/intrinsic-dimension-of-data-representations-in-deep-neural-networks\/",
+  "keywords":"[Representations]"
 }
 
 </script>
@@ -27,26 +27,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yimeng Chen">
-<meta name="keywords" content="OOD">
-<meta name="description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta name="keywords" content="Representations">
+<meta name="description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
 
 
-<meta property="og:description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta property="og:description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Causally Motivated Shortcut Removal Using Auxiliary Labels">
-<meta name="twitter:title" content="Causally Motivated Shortcut Removal Using Auxiliary Labels">
-<meta property="og:url" content="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
-<meta property="twitter:url" content="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
+<meta property="og:title" content="Intrinsic Dimension of Data Representations in Deep Neural Networks">
+<meta name="twitter:title" content="Intrinsic Dimension of Data Representations in Deep Neural Networks">
+<meta property="og:url" content="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/">
 <meta property="og:site_name" content="Yimeng Chen&#39;s site">
-<meta property="og:description" content="A paper on shortcut removal, published at AISTATS 2022.">
-<meta name="twitter:description" content="A paper on shortcut removal, published at AISTATS 2022.">
+<meta property="og:description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
+<meta name="twitter:description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-03-29T00:00:00">
+    <meta property="article:published_time" content="2022-06-21T00:00:00">
   
   
-    <meta property="article:modified_time" content="2022-03-29T00:00:00">
+    <meta property="article:modified_time" content="2022-06-21T00:00:00">
   
   
   
@@ -56,7 +56,7 @@
   
   
     
-      <meta property="article:tag" content="paper notes">
+      <meta property="article:tag" content="paper-learning">
     
   
 
@@ -76,18 +76,18 @@
 
 
 
-  <meta property="og:image" content="https://beastlyprime.github.io/images/v-shortcut.png">
-  <meta property="twitter:image" content="https://beastlyprime.github.io/images/v-shortcut.png">
+  <meta property="og:image" content="https://beastlyprime.github.io/images/IntrinsicD.jpg">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/IntrinsicD.jpg">
 
 
-    <title>Causally Motivated Shortcut Removal Using Auxiliary Labels</title>
+    <title>Intrinsic Dimension of Data Representations in Deep Neural Networks</title>
 
     <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/">
+    <link rel="canonical" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -227,15 +227,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      Causally Motivated Shortcut Removal Using Auxiliary Labels
+      Intrinsic Dimension of Data Representations in Deep Neural Networks
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-03-29T00:00:00Z">
+      <time datetime="2022-06-21T00:00:00Z">
         
-  March 29, 2022
+  June 21, 2022
 
       </time>
     
@@ -254,27 +254,66 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>A paper on shortcut removal, published at AISTATS 2022.</p>
-<p><strong>Abstract</strong>: A flexible, causally-motivated approach to training robust predictors by discouraging the use of specific shortcuts, focusing on a common setting where a robust predictor could achieve optimal iid generalization in principle, but is overshadowed by a shortcut predictor in practice.</p>
-<p><strong>Problem setup</strong>: We consider a supervised learning setup where the task is to construct a predictor $f(X)$ parameterized by weights w that predicts a label $Y$ (e.g., foreground object) from an input $X$ (e.g., image). In addition, we have an auxiliary label $V$ (e.g., background label) available only at training time that labels a factor of variation along which we hope the model will exhibit some invariance (e.g., background type). $V$ is <strong>binary</strong>.</p>
-<p>We assume that there is a sufficient statistic $X^∗$ such that $Y$ only affects $X$ through $X^∗$, and $X^∗$ can be fully recovered from X via the function $X^∗ := e(X)$.</p>
-<p><strong>Method</strong>:</p>
+              <p>This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.</p>
+<!-- raw HTML omitted -->
+<p><em>Intrinsic dimension</em> (ID) is viewed as a fundamental geometric property of a data representation in a neural network. Informally, it is the minimal number of coordinates which are necessary to describe its points without significant information loss. This paper introduces some existing observations on the ID of some neural networks:</p>
 <ul>
-<li>Weighting to Recover $P^◦$</li>
-<li>Use a MMD penalty between ${V=1}$ and ${V = 0}$ as regularization under $P^◦$</li>
+<li>Linear estimates of ID on simplified models and local estimates of ID have been developed.</li>
+<li>Local ID has been shown correlates with the adversarial robustness. Lower local ID -&gt; higher robustness.</li>
+<li>Local ID at several locations on the tangent space of object manifolds are estimated, and found decrease along the last hidden layers of AlexNet.</li>
+<li>Local ID in the last layer of DNNs has been found to be much lower than the dimension of the embedding space.</li>
+<li>Some linear and nonlinear dimensionality reduction techniques have been developed.</li>
 </ul>
-<p><strong>Theory:</strong></p>
+<p>This paper aims to answer:</p>
+<ul>
+<li>How the ID changes alongs the layer of CNNs?</li>
+<li>How different is the actual ID from the &lsquo;linear&rsquo; dimensionality of a network?</li>
+<li>How is the ID relates to the generalization performance?</li>
+</ul>
+<p>They uses an existing method, TwoNN, to estimate global ID. It exploits the fact that nearest-neighbour statistics depend on the ID. Based on TwoNN, The answers are shown to be:</p>
+<ul>
+<li>The variation of the ID along the hidden layers of CNNs follows a similar trend across different architectures: increase in early layers, then monotonically decrease.</li>
+<li>ID of CNNs are typically several orders of magnitude lower than the dimensionality of the embedding space (the number of units in a layer).</li>
+<li>In networks trained to classify images, the ID of the training set in the last hidden layer can accurately predicts the network’s classification accuracy on the test set: the lower the better. ID remains high for a network trained on non predictable data (i.e., with permuted labels).</li>
+</ul>
+<p>These observations seem to be consistent with our intuition of ID. Now we study how the ID is calculated in this paper.</p>
+<h2 id="estimating-the-id-by-twonn">Estimating the ID by TwoNN</h2>
+<p>TwoNN <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is based on computing the ratio between the distances to the second and first nearest neighbors (NN) of each data point. It can be applied even if the manifold containing the data is curved, topologically complex, and sampled non-uniformly.</p>
+<p><strong>The assumption of TwoNN</strong>: the density is constant on the scale of the distance between each point and its second nearest neighbor.</p>
+<p><img src="https://beastlyprime.github.io/images/TwoNN.png" alt="TwoNN"></p>
+<p>Let points $x_i$ be uniformly sampled on a manifold with intrinsic dimension $d$ and let $N$ be the total number of points. The algorithm of TwoNN consists of the following steps:</p>
 <ul>
 <li>
-<p>Proposition 1. Under $P^◦$, the Bayes optimal predictor is (i) only a function of $X^∗$, and (ii) an optimal risk-invariant predictor with respect to P.</p>
+<p>For each data point $i$ compute the distance to its first and second neighbour $r_i^{(1)}$and $r_i^{(2)}$, as shown in the figure above.</p>
 </li>
 <li>
-<p>MMD penalty can bound the structural risk gap and the learning gap</p>
+<p>Compute the ratio $\mu_i =  r_i^{(2)} / r_i^{(1)}$. It follows a Pareto distribution with parameter $d+1$ on $[1, +\infty]$. $P(\mu) = \frac{d}{\mu^{1+d}}$.  ${\mu_i}$  are assumed $i.i.d.$.</p>
 </li>
 <li>
-<p>Enforcing the invariance penalty without reweighting leads to a model that is inconsistent with the causal DAG, and is hence biased</p>
+<p>Infer $d$ by maximizing the empirical likelihood:
+$$
+P(\boldsymbol{\mu} \mid d)=d^{N} \prod_{i=1}^{N} \mu_{i}^{-(d+1)}
+$$</p>
+</li>
+<li>
+<p>Repeat the calculation selecting a fraction of points at random. This gives the ID as a function of the scale of the distances.</p>
 </li>
 </ul>
+<p>It is introduced in this paper that:</p>
+<ol>
+<li>The ID can also be estimated by restricting the product in the above equation to non-intersecting triplets of points, for which independence is strictly satisfied, but, as shown in the paper <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, in practice this does not significantly affect the estimate.</li>
+<li>The ID estimated by this approach is asymptotically correct even for samples harvested from highly non-uniform probability distributions.</li>
+<li>When ID is smaller than 20, the estimated values remain very close with finite samples; when larger ∼ 20, the estimated values should be considered as lower bounds.</li>
+<li>ID should be at least approximately scale invariant. To test that, they systematically decimating the dataset, thus gradually reducing its size and the average distance between data points had become progressively larger.</li>
+</ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>E. Facco, M. d’Errico, A. Rodriguez, and A. Laio, “Estimating the intrinsic dimension of datasets by a minimal neighborhood information,” <em>Scientific reports</em>, vol. 7, no. 1, p. 12140, 2017. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
               
 
 
@@ -288,7 +327,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-notes/">paper notes</a>
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-learning/">paper-learning</a>
 
                   </div>
                 
@@ -301,7 +340,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="NEXT: Intrinsic Dimension of Data Representations in Deep Neural Networks">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/welcome-about-me/" data-tooltip="Welcome &amp; About Me" aria-label="NEXT: Welcome &amp; About Me">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -309,7 +348,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests" aria-label="PREVIOUS: Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" data-tooltip="Causally Motivated Shortcut Removal Using Auxiliary Labels" aria-label="PREVIOUS: Causally Motivated Shortcut Removal Using Auxiliary Labels">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -327,13 +366,13 @@
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
@@ -372,7 +411,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="NEXT: Intrinsic Dimension of Data Representations in Deep Neural Networks">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/welcome-about-me/" data-tooltip="Welcome &amp; About Me" aria-label="NEXT: Welcome &amp; About Me">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -380,7 +419,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/" data-tooltip="Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests" aria-label="PREVIOUS: Counterfactual Invariance to Spurious Correlations: Why and How to Pass Stress Tests">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" data-tooltip="Causally Motivated Shortcut Removal Using Auxiliary Labels" aria-label="PREVIOUS: Causally Motivated Shortcut Removal Using Auxiliary Labels">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -398,13 +437,13 @@
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
@@ -429,13 +468,13 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcausally-motivated-shortcut-removal-using-auxiliary-labels%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fintrinsic-dimension-of-data-representations-in-deep-neural-networks%2F" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F03%2Fcausally-motivated-shortcut-removal-using-auxiliary-labels%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fintrinsic-dimension-of-data-representations-in-deep-neural-networks%2F" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
