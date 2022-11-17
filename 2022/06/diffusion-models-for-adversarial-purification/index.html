@@ -16,9 +16,9 @@
     
   },
   "name":"Yimeng Chen\u0027s site",
-  "description":"\u003cp\u003eThis paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.\u003c\/p\u003e",
-  "url":"https:\/\/beastlyprime.github.io\/2022\/06\/intrinsic-dimension-of-data-representations-in-deep-neural-networks\/",
-  "keywords":"[Representations, Intrinsic Dimension of Data Representations, blog, machine-learning, yimeng-chen]"
+  "description":"\u003cp\u003ePurify Adversarial samples with diffusion models. Published at ICML 2022.\u003c\/p\u003e",
+  "url":"https:\/\/beastlyprime.github.io\/2022\/06\/diffusion-models-for-adversarial-purification\/",
+  "keywords":"[Diffusion Model, Adversarial Purification, blog, machine-learning, yimeng-chen]"
 }
 
 </script>
@@ -27,36 +27,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yimeng Chen">
-<meta name="keywords" content="Representations, Intrinsic Dimension of Data Representations, blog, machine-learning, yimeng-chen">
-<meta name="description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
+<meta name="keywords" content="Diffusion Model, Adversarial Purification, blog, machine-learning, yimeng-chen">
+<meta name="description" content="Purify Adversarial samples with diffusion models. Published at ICML 2022.">
 
 
-<meta property="og:description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
+<meta property="og:description" content="Purify Adversarial samples with diffusion models. Published at ICML 2022.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Intrinsic Dimension of Data Representations in Deep Neural Networks">
-<meta name="twitter:title" content="Intrinsic Dimension of Data Representations in Deep Neural Networks">
-<meta property="og:url" content="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/">
-<meta property="twitter:url" content="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/">
+<meta property="og:title" content="Diffusion Models for Adversarial Purification">
+<meta name="twitter:title" content="Diffusion Models for Adversarial Purification">
+<meta property="og:url" content="https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/">
+<meta property="twitter:url" content="https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/">
 <meta property="og:site_name" content="Yimeng Chen&#39;s site">
-<meta property="og:description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
-<meta name="twitter:description" content="This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.">
+<meta property="og:description" content="Purify Adversarial samples with diffusion models. Published at ICML 2022.">
+<meta name="twitter:description" content="Purify Adversarial samples with diffusion models. Published at ICML 2022.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-06-21T00:00:00">
+    <meta property="article:published_time" content="2022-06-28T00:00:00">
   
   
-    <meta property="article:modified_time" content="2022-06-21T00:00:00">
+    <meta property="article:modified_time" content="2022-06-28T00:00:00">
   
   
   
     
       <meta property="article:section" content="Machine Learning">
     
+      <meta property="article:section" content="Adversarial Robust">
+    
   
   
     
-      <meta property="article:tag" content="paper-learning">
+      <meta property="article:tag" content="paper-notes">
     
   
 
@@ -76,18 +78,18 @@
 
 
 
-  <meta property="og:image" content="https://beastlyprime.github.io/images/IntrinsicD.jpg">
-  <meta property="twitter:image" content="https://beastlyprime.github.io/images/IntrinsicD.jpg">
+  <meta property="og:image" content="https://beastlyprime.github.io/images/diffpure.png">
+  <meta property="twitter:image" content="https://beastlyprime.github.io/images/diffpure.png">
 
 
-    <title>Intrinsic Dimension of Data Representations in Deep Neural Networks</title>
+    <title>Diffusion Models for Adversarial Purification</title>
 
     <link rel="icon" href="https://beastlyprime.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/">
+    <link rel="canonical" href="https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -227,15 +229,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      Intrinsic Dimension of Data Representations in Deep Neural Networks
+      Diffusion Models for Adversarial Purification
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-06-21T00:00:00Z">
+      <time datetime="2022-06-28T00:00:00Z">
         
-  June 21, 2022
+  June 28, 2022
 
       </time>
     
@@ -244,7 +246,9 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://beastlyprime.github.io/categories/machine-learning">Machine Learning</a>
+      <a class="category-link" href="https://beastlyprime.github.io/categories/machine-learning">Machine Learning</a>, 
+    
+      <a class="category-link" href="https://beastlyprime.github.io/categories/adversarial-robust">Adversarial Robust</a>
     
   
 
@@ -254,62 +258,19 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>This paper studies the geometrical properties of the representations learned by neural networks. Published at NeurIPS 2019.</p>
-<p><em>Intrinsic dimension</em> (ID) is viewed as a fundamental geometric property of a data representation in a neural network. Informally, it is the minimal number of coordinates which are necessary to describe its points without significant information loss. This paper introduces some existing observations on the ID of some neural networks:</p>
-<ul>
-<li>Linear estimates of ID on simplified models and local estimates of ID have been developed.</li>
-<li>Local ID has been shown correlates with the adversarial robustness. Lower local ID -&gt; higher robustness.</li>
-<li>Local ID at several locations on the tangent space of object manifolds are estimated, and found decrease along the last hidden layers of AlexNet.</li>
-<li>Local ID in the last layer of DNNs has been found to be much lower than the dimension of the embedding space.</li>
-<li>Some linear and nonlinear dimensionality reduction techniques have been developed.</li>
-</ul>
-<p>This paper aims to answer:</p>
-<ul>
-<li>How the ID changes alongs the layer of CNNs?</li>
-<li>How different is the actual ID from the &lsquo;linear&rsquo; dimensionality of a network?</li>
-<li>How is the ID relates to the generalization performance?</li>
-</ul>
-<p>They uses an existing method, TwoNN, to estimate global ID. It exploits the fact that nearest-neighbour statistics depend on the ID. Based on TwoNN, The answers are shown to be:</p>
-<ul>
-<li>The variation of the ID along the hidden layers of CNNs follows a similar trend across different architectures: increase in early layers, then monotonically decrease.</li>
-<li>ID of CNNs are typically several orders of magnitude lower than the dimensionality of the embedding space (the number of units in a layer).</li>
-<li>In networks trained to classify images, the ID of the training set in the last hidden layer can accurately predicts the network’s classification accuracy on the test set: the lower the better. ID remains high for a network trained on non predictable data (i.e., with permuted labels).</li>
-</ul>
-<p>These observations seem to be consistent with our intuition of ID. Now we study how the ID is calculated in this paper.</p>
-<h2 id="estimating-the-id-by-twonn">Estimating the ID by TwoNN</h2>
-<p>TwoNN <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is based on computing the ratio between the distances to the second and first nearest neighbors (NN) of each data point. It can be applied even if the manifold containing the data is curved, topologically complex, and sampled non-uniformly.</p>
-<p><strong>The assumption of TwoNN</strong>: the density is constant on the scale of the distance between each point and its second nearest neighbor.</p>
-<p><img src="https://beastlyprime.github.io/images/TwoNN.png" alt="TwoNN"></p>
-<p>Let points $x_i$ be uniformly sampled on a manifold with intrinsic dimension $d$ and let $N$ be the total number of points. The algorithm of TwoNN consists of the following steps:</p>
-<ul>
-<li>
-<p>For each data point $i$ compute the distance to its first and second neighbour $r_i^{(1)}$and $r_i^{(2)}$, as shown in the figure above.</p>
-</li>
-<li>
-<p>Compute the ratio $\mu_i =  r_i^{(2)} / r_i^{(1)}$. It follows a Pareto distribution with parameter $d+1$ on $[1, +\infty]$. $P(\mu) = \frac{d}{\mu^{1+d}}$.  ${\mu_i}$  are assumed $i.i.d.$.</p>
-</li>
-<li>
-<p>Infer $d$ by maximizing the empirical likelihood:
-$$
-P(\boldsymbol{\mu} \mid d)=d^{N} \prod_{i=1}^{N} \mu_{i}^{-(d+1)}
-$$</p>
-</li>
-<li>
-<p>Repeat the calculation selecting a fraction of points at random. This gives the ID as a function of the scale of the distances.</p>
-</li>
-</ul>
-<p>It is introduced in this paper that:</p>
-<ol>
-<li>The ID can also be estimated by restricting the product in the above equation to non-intersecting triplets of points, for which independence is strictly satisfied, but, as shown in the paper <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, in practice this does not significantly affect the estimate.</li>
-<li>The ID estimated by this approach is asymptotically correct even for samples harvested from highly non-uniform probability distributions.</li>
-<li>When ID is smaller than 20, the estimated values remain very close with finite samples; when larger ∼ 20, the estimated values should be considered as lower bounds.</li>
-<li>ID should be at least approximately scale invariant. To test that, they systematically decimating the dataset, thus gradually reducing its size and the average distance between data points had become progressively larger.</li>
-</ol>
+              <p>Purify Adversarial samples with diffusion models. Published at ICML 2022.</p>
+<p>Adversarial purification is a kind of defense methods, which removes adversarial perturbations of an input image with a generative model.</p>
+<p>Diffusion model, which has become a hotspot, is a new kind of generative model which generates new images by mimicing a diffusion process from a random input to an image. One can read <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">this blog</a> for details about diffusion models.</p>
+<p>An important characteristic of diffusion models is that it models &ldquo;transition states&rdquo; between an image and a corresponding sample from a Gaussian distribution, i.e.  images combined with different extent of Gaussian noises. It can stepwisely change a noisy image to an image with high resolution.  This characteristic inspires their application in the adversarial purification:</p>
+<p><img src="https://beastlyprime.github.io/images/diffpure.png" alt="figure"></p>
+<p>Given a pre-trained diffusion model, add noise to adversarial images following the forward diffusion process with a small diffusion timestep $t^*$ to get diffused images, from which we can recover clean images through the reverse denoising process before classification.</p>
+<p>The step of adding noise is important. Intuitively, it pulls the input image into the distribution of training transition images, so that by reverse denoising, we can convert it into the space of training images. Note that it requires the training data distribution of the diffusion model similar to that of the adversarial data.</p>
+<p>An interesting fact to note that under AutoAttack on CIFAR-10, for WideResNet-70-16, this method encounters a decrease in the standard accuracy. That may due to the disparity between the reversed images and the real images. See the paper<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> for more details of the experiment results.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>E. Facco, M. d’Errico, A. Rodriguez, and A. Laio, “Estimating the intrinsic dimension of datasets by a minimal neighborhood information,” <em>Scientific reports</em>, vol. 7, no. 1, p. 12140, 2017. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Diffusion Models for Adversarial Purification. ICML 2022. <a href="https://arxiv.org/pdf/2205.07460.pdf">link</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -326,7 +287,7 @@ $$</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-learning/">paper-learning</a>
+  <a class="tag tag--primary tag--small" href="https://beastlyprime.github.io/tags/paper-notes/">paper-notes</a>
 
                   </div>
                 
@@ -339,7 +300,7 @@ $$</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/" data-tooltip="Diffusion Models for Adversarial Purification" aria-label="NEXT: Diffusion Models for Adversarial Purification">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/welcome-about-me/" data-tooltip="Welcome &amp; About Me" aria-label="NEXT: Welcome &amp; About Me">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -347,7 +308,7 @@ $$</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" data-tooltip="Causally Motivated Shortcut Removal Using Auxiliary Labels" aria-label="PREVIOUS: Causally Motivated Shortcut Removal Using Auxiliary Labels">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="PREVIOUS: Intrinsic Dimension of Data Representations in Deep Neural Networks">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -365,13 +326,13 @@ $$</p>
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
@@ -410,7 +371,7 @@ $$</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/" data-tooltip="Diffusion Models for Adversarial Purification" aria-label="NEXT: Diffusion Models for Adversarial Purification">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/welcome-about-me/" data-tooltip="Welcome &amp; About Me" aria-label="NEXT: Welcome &amp; About Me">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -418,7 +379,7 @@ $$</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/" data-tooltip="Causally Motivated Shortcut Removal Using Auxiliary Labels" aria-label="PREVIOUS: Causally Motivated Shortcut Removal Using Auxiliary Labels">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" data-tooltip="Intrinsic Dimension of Data Representations in Deep Neural Networks" aria-label="PREVIOUS: Intrinsic Dimension of Data Representations in Deep Neural Networks">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -436,13 +397,13 @@ $$</p>
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
@@ -467,13 +428,13 @@ $$</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fintrinsic-dimension-of-data-representations-in-deep-neural-networks%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fdiffusion-models-for-adversarial-purification%2F" aria-label="Share on Facebook">
           <i class="fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fintrinsic-dimension-of-data-representations-in-deep-neural-networks%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fbeastlyprime.github.io%2F2022%2F06%2Fdiffusion-models-for-adversarial-purification%2F" aria-label="Share on Twitter">
           <i class="fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>

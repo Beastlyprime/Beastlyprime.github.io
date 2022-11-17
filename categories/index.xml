@@ -8,10 +8,28 @@
     <language>en-us</language>
     <managingEditor>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</managingEditor>
     <webMaster>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</webMaster>
-    <lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://beastlyprime.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adversarial Robust</title>
+      <link>https://beastlyprime.github.io/categories/adversarial-robust/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/categories/adversarial-robust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://beastlyprime.github.io/categories/machine-learning/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
+      <guid>https://beastlyprime.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>by-talk</title>
@@ -19,15 +37,6 @@
       <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
       <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
       <guid>https://beastlyprime.github.io/categories/by-talk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://beastlyprime.github.io/categories/machine-learning/</link>
-      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
-      <author>chenyimeng14@mails.ucas.ac.cn;chenyimeng16@icloud.com (Yimeng Chen)</author>
-      <guid>https://beastlyprime.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     

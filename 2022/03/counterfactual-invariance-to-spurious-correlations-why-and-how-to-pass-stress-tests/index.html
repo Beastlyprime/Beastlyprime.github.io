@@ -288,13 +288,13 @@
 <p><strong>Def.</strong> (<em>counterfactual invariance</em>) A predictor f is <em>counterfactually invariant to</em> Z if f(X(z)) = f(X(z′)) almost everywhere, for all z, z′ in the sample space of Z. X(z) denotes the counterfactual X we would have seen had Z been set to z, leaving all else fixed. When Z is clear from context, we’ll just say the predictor is counterfactually invariant.</p>
 <p>To discuss counterfacture invariance, it based on how the <em>true</em> label behaves under interventions on parts of the input data. As a result we need to specify the causal structure of the collected data.</p>
 <blockquote>
-<p>We will see that the true causal structure fundamentally affects both the implications of counterfactual invariance, and the techniques we use to achieve it. To study this phenomenon, we’ll use two causal structures that are commonly encountered in applications <strong>(Why common?)</strong>; see Figure 1.</p>
+<p>We will see that the true causal structure fundamentally affects both the implications of counterfactual invariance, and the techniques we use to achieve it. To study this phenomenon, we’ll use two causal structures that are commonly encountered in applications <strong>(Why common?)</strong> ; see Figure 1.</p>
 </blockquote>
 <p>The two structures are defined as follows</p>
 <p><img src="https://beastlyprime.github.io/images/ci-2graph.jpg" alt="ci-2graph"></p>
 <h3 id="the-first-one-predicition-in-the-causal-direction">The first one, predicition in the causal direction</h3>
 <p>Notice that the only thing that’s relevant about these latent variables is their causal relationship with Y and Z. Accordingly, we’ll decompose the observed variable X into parts defined by their causal relationships with Y and Z. We remain agnostic to the semantic interpretation of these parts. Namely, we define $X_{Z}^⊥$ as the part of X that is not causally influenced by Z (but may influence Y ), $X_{Y}^⊥$ as the part that does not causally influence Y (but may be influenced by Z), and $X_{Y∧Z}$ is the remaining part that is both influenced by Z and that influences Y .</p>
-<p>**Question: why the part  $X_{Y∧Z}$  exists?** An example was given:</p>
+<p><strong>Question</strong>: why the part  $X_{Y∧Z}$  exists?  An example was given:</p>
 <blockquote>
 <p>a very enthusiastic reviewer might write a longer, more detailed review, which will in turn be more helpful.</p>
 </blockquote>
@@ -304,11 +304,11 @@
 <blockquote>
 <p><strong>Example 2.2</strong> We want to predict the star rating Y of movie reviews from the text X. However, we find that predictions are influenced by the movie genre Z.</p>
 </blockquote>
-<p><strong>Question: why in this example, the movie genre Z is not directly influence the star rating Y?</strong> **What is the $X_{Y∧Z}$?**</p>
+<p><strong>Question</strong>: why in this example, the movie genre Z is not directly influence the star rating Y? What is the $X_{Y∧Z}$ ?</p>
 <blockquote>
 <p>For example, if Adam Sandler tends to appear in good comedy movies but bad movies of other genres then seeing “Sandler” in the text induces a dependency between sentiment and genre.</p>
 </blockquote>
-<p>**Question: why &ldquo;Adam Sandler&rdquo;, the name of an actor, is in $X_{Y∧Z}$ ?**</p>
+<p><strong>Question</strong>: why &ldquo;Adam Sandler&rdquo;, the name of an actor, is in $X_{Y∧Z}$ ?</p>
 <p>Second, Z and Y may be associated due to a common cause, or due to selection effects in the data collection protocol—this is represented by the dashed line between Z and Y . For example, fans of romantic comedies may tend to give higher reviews (to all films) than fans of horror movies. Here &ldquo;fans of some genre&rdquo; is the confounder.</p>
 <h3 id="more-explainations-on-the-non-causal-associations-between-y-and-z">More explainations on the non-causal associations between Y and Z</h3>
 <p>First, Y and Z may be <em>confounded</em>: they are both influenced by an unobserved common cause U .</p>
@@ -325,31 +325,31 @@
 <p><strong>Definition 2.3</strong>. We say that the association between Y and Z is <em>purely spurious</em> if Y ⊥ X | $X_Z^⊥, Z$ . That is, if the dashed-line association did not exist (removed by conditioning on Z) then the part of X that is not influenced by Z would suffice to estimate Y .</p>
 <p>With that language, many existing works focus purely spurious features.</p>
 <h2 id="observable-signatures-of-counterfactually-invariant-predictors">Observable Signatures of Counterfactually Invariant Predictors</h2>
-<p>How the counterfactually invariant predictors be like? It depends only on $X_Z^⊥$, intuitively. To formalize that idea, we should first show that such a $X_Z^⊥$ is well-defined.
-<strong>Lemma 3.1.</strong> <em>Let</em> $X_Z^⊥$ <em>be a</em> X <em>-measurable random variable such that, for all measurable functions</em> f <em>, we have that</em> f <em>is counterfactually invariant if and only if</em> f(X) <em>is</em> $X_Z^⊥$*-measurable. If* Z *is discrete* *then such a* $X_Z^⊥$ *exists.*</p>
+<p>How the counterfactually invariant predictors be like? It depends only on $X_Z^⊥$, intuitively. To formalize that idea, we should first show that such a $X_Z^⊥$ is well-defined.</p>
+<p><strong>Lemma 3.1.</strong> <em>Let</em> $X_Z^⊥$ <em>be a</em> X <em>-measurable random variable such that, for all measurable functions</em> f <em>, we have that</em> f <em>is counterfactually invariant if and only if</em> f(X) <em>is</em> $X_Z^⊥$ <em>-measurable. If</em> Z <em>is discrete</em> <em>then such a</em> $X_Z^⊥$ <em>exists.</em></p>
 <p>Now counterfactually invariant predictors are defined as $X_Z^⊥$-measurable functions.</p>
 <p><strong>Theorem</strong> 3.2. <em>If</em> f <em>is a counterfactually invariant predictor:</em></p>
 <ol>
 <li><em>Under the anti-causal graph,</em> f(X) ⊥ Z | Y <em>.</em></li>
-<li><em>Under the causal-direction graph, if</em> Y <em>and</em> Z <em>are not subject to selection (but possibly confounded),</em> f(X) ⊥ Z*.*</li>
+<li><em>Under the causal-direction graph, if</em> Y <em>and</em> Z <em>are not subject to selection (but possibly confounded),</em> f(X) ⊥ Z.</li>
 <li><em>Under the causal-direction graph, if the association is purely spurious</em> <em>, and</em> Y <em>and</em> Z <em>are not confounded (but possibly selected),</em> f(X) ⊥ Z | Y <em>.</em></li>
 </ol>
 <p>The procedure is then: if the data has causal-direction structure and the Y ↔ Z association is due to confounding, add the marginal regularization term to the the training objective. If the data has anti-causal structure, or the association is due to selection, add the conditional regularization term instead.</p>
-<p>A key point is that the regularizer we must use depends on the true causal structure. The conditional and marginal independence conditions are generally <strong>incompatible</strong>. Enforcing the condition that is mismatched to the true underlying causal structure may fail to encourage counterfactual invariance, or may throw away more information than is required.</p>
+<p>A key point is that the regularizer we must use depends on the true causal structure. The conditional and marginal independence conditions are generally <strong>incompatible</strong> . Enforcing the condition that is mismatched to the true underlying causal structure may fail to encourage counterfactual invariance, or may throw away more information than is required.</p>
 <h2 id="how-counterfactual-invariance-relates-to-ood-accuracy">How counterfactual invariance relates to OOD accuracy</h2>
 <ul>
 <li>First, we must articulate the set of domain shifts to be considered. In our setting, the natural thing is to hold the causal relationships fixed across domains, but to allow the non-causal (“spurious”) dependence between Y and Z to vary. We want to capture spurious domain shifts by considering domain shifts induced by selection or confounding.</li>
 <li>Changes to the marginal distribution of Y will affect the risk of a predictor, even in the absence of any spurious association between Y and Z. Therefore, we restrict to shifts that preserve the marginal distribution of Y .</li>
 </ul>
 <p><strong>Definition 4.1.</strong> (causally compatible) We say that distributions <em>P</em>, <em>Q</em> are <em>causally compatible</em> if both obey the same causal graph, <em>P</em>(<em>Y</em> ) = <em>Q</em>(<em>Y</em> ), and there is a confounder <em>U</em> and/or selection conditions <em>S</em>, <em>S</em> ̃ such that <em>P</em>=$\int$<em>X</em>,<em>Y</em>,<em>Z</em> | <em>U</em>,<em>S</em>=1)d<em>P</em> ̃(<em>U</em>) and <em>Q</em>=$\int$(<em>X</em>,<em>Y</em>,<em>Z</em> | <em>U</em>,<em>S</em> ̃=1)d<em>Q</em> ̃(<em>U</em>) for some <em>P</em> ̃ ( <em>U</em> ) , <em>Q</em> ̃ ( <em>U</em> ) .</p>
-<p><strong>Theorem 4.2.</strong> <em>Suppose that the target distribution Q is causally</em> <em>compatible with the training distribution</em> <em>P</em>*. Suppose that any of the following conditions hold:***</p>
+<p><strong>Theorem 4.2.</strong> <em>Suppose that the target distribution Q is causally</em> <em>compatible with the training distribution</em> <em>P</em>.  <em>Suppose that any of the following conditions hold:</em></p>
 <p>​		   1.<em>the data obeys the anti-causal graph</em></p>
 <ol start="2">
 <li><em>the data obeys the causal direction graph, there is no confounding (but possibly selection), and the association is purely spurious,  or</em></li>
 <li><em>the data obeys the causal-direction graph, there is no selection (but possibly confounding),</em> <em>the association is purely spurious and the causal effect of $X^⊥_Z$</em>on Y is additive.</li>
 </ol>
 <p><em>Then, the training domain counterfactually invariant risk minimizer is also the target domain counterfactually invariant risk minimizer.</em></p>
-<p><em>Remark</em> 4.3*.* The causal case with confounding requires an additional assumption (additive structure) because, e.g., an interaction between confounder and $X^⊥_Z$ can yield a case where $X^⊥_Z$ and *Y* have a different relationship in each domain (whence, out-of-domain learning is impossible).</p>
+<p><em>Remark</em> 4.3. The causal case with confounding requires an additional assumption (additive structure) because, e.g., an interaction between confounder and $X^⊥_Z$ can yield a case where $X^⊥_Z$ and $Y$ have a different relationship in each domain (whence, out-of-domain learning is impossible).</p>
               
 
 
@@ -384,7 +384,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/02/generalization-and-detection/" data-tooltip="Generalization and Detection" aria-label="PREVIOUS: Generalization and Detection">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One" aria-label="PREVIOUS: Your Classifier is Secretly An EBM and You Should Treat It Like One">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -455,7 +455,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2022/02/generalization-and-detection/" data-tooltip="Generalization and Detection" aria-label="PREVIOUS: Generalization and Detection">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://beastlyprime.github.io/2020/08/your-classifier-is-secretly-an-ebm-and-you-should-treat-it-like-one/" data-tooltip="Your Classifier is Secretly An EBM and You Should Treat It Like One" aria-label="PREVIOUS: Your Classifier is Secretly An EBM and You Should Treat It Like One">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

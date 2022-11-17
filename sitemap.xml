@@ -10,6 +10,62 @@
   </url>
   
   <url>
+    <loc>https://beastlyprime.github.io/categories/adversarial-robust/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/categories/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/2022/06/diffusion-models-for-adversarial-purification/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/categories/machine-learning/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/tags/paper-notes/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/post/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/tags/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beastlyprime.github.io/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://beastlyprime.github.io/tags/by-talk/</loc>
     <lastmod>2022-06-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,21 +80,7 @@
   </url>
   
   <url>
-    <loc>https://beastlyprime.github.io/categories/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://beastlyprime.github.io/2022/06/intrinsic-dimension-of-data-representations-in-deep-neural-networks/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beastlyprime.github.io/categories/machine-learning/</loc>
     <lastmod>2022-06-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -52,35 +94,7 @@
   </url>
   
   <url>
-    <loc>https://beastlyprime.github.io/post/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beastlyprime.github.io/tags/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beastlyprime.github.io/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://beastlyprime.github.io/2022/03/causally-motivated-shortcut-removal-using-auxiliary-labels/</loc>
-    <lastmod>2022-03-29T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beastlyprime.github.io/tags/paper-notes/</loc>
     <lastmod>2022-03-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -89,20 +103,6 @@
   <url>
     <loc>https://beastlyprime.github.io/2022/03/counterfactual-invariance-to-spurious-correlations-why-and-how-to-pass-stress-tests/</loc>
     <lastmod>2022-03-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beastlyprime.github.io/2022/02/generalization-and-detection/</loc>
-    <lastmod>2022-02-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beastlyprime.github.io/tags/review/</loc>
-    <lastmod>2022-02-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
